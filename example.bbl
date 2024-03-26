@@ -1,0 +1,90 @@
+\begin{thebibliography}{10}
+
+\bibitem{Brazil2014}
+M.~Brazil, R.~L. Graham, D.~A. Thomas, and M.~Zachariasen.
+\newblock On the history of the euclidean steiner tree problem.
+\newblock {\em Archive for History of Exact Sciences}, 68(3):327--354, May
+  2014.
+
+\bibitem{finalb}
+F.~Chung and R.~Graham.
+\newblock A new bound for euclidean steiner minimal trees.
+\newblock {\em Annals of the New York Academy of Sciences}, 440:328 -- 346, 12
+  2006.
+
+\bibitem{3a161666-bf4c-3db7-b5bc-795aa21aed1b}
+F.~R.~K. Chung and F.~K. Hwang.
+\newblock A lower bound for the steiner tree problem.
+\newblock {\em SIAM Journal on Applied Mathematics}, 34(1):27--36, 1978.
+
+\bibitem{cockayne_1967}
+E.~J. Cockayne.
+\newblock On the steiner problem.
+\newblock {\em Canadian Mathematical Bulletin}, 10(3):431–450, 1967.
+
+\bibitem{courant1996mathematics}
+R.~Courant, H.~Robbins, and I.~Stewart.
+\newblock {\em What is Mathematics?: An Elementary Approach to Ideas and
+  Methods}.
+\newblock Oxford paperbacks : Mathematics. Oxford University Press, 1996.
+
+\bibitem{po}
+P.~O. De~Wet.
+\newblock {\em Geometric Steiner minimal trees}.
+\newblock PhD thesis, University of South Africa, 2009.
+
+\bibitem{d6ebcb0d-eded-3f80-b57b-cda0b84fa6c0}
+D.~Z. Du and F.~K. Hwang.
+\newblock A new bound for the steiner ratio.
+\newblock {\em Transactions of the American Mathematical Society},
+  278(1):137--148, 1983.
+
+\bibitem{doi:10.1073/pnas.87.23.9464}
+D.~Z. Du and F.~K. Hwang.
+\newblock The steiner ratio conjecture of gilbert and pollak is true.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  87(23):9464--9466, 1990.
+
+\bibitem{GP1968}
+E.~N. Gilbert and H.~O. Pollak.
+\newblock Steiner minimal trees.
+\newblock {\em SIAM Journal on Applied Mathematics}, 16(1):1--29, 1968.
+
+\bibitem{1/sqrt3}
+R.~L. Graham and F.~K. Hwang.
+\newblock A remark on steiner minimal trees.
+\newblock {\em Bulletin of the Institute of Mathematics Academia Sinica},
+  4(1):177--182, 1976.
+
+\bibitem{doi:10.1137/0130013}
+F.~K. Hwang.
+\newblock On steiner minimal trees with rectilinear distance.
+\newblock {\em SIAM Journal on Applied Mathematics}, 30(1):104--114, 1976.
+
+\bibitem{Ivanov2012}
+A.~O. Ivanov and A.~A. Tuzhilin.
+\newblock The steiner ratio gilbert--pollak conjecture is still open.
+\newblock {\em Algorithmica}, 62(1):630--632, Feb 2012.
+
+\bibitem{melzak_1961}
+Z.~Melzak.
+\newblock On the problem of steiner.
+\newblock {\em Canadian Mathematical Bulletin}, 4(2):143–148, 1961.
+
+\bibitem{Pettie2008}
+S.~Pettie.
+\newblock {\em Minimum Spanning Trees}, pages 541--544.
+\newblock Springer US, Boston, MA, 2008.
+
+\bibitem{POLLAK1978278}
+H.~Pollak.
+\newblock Some remarks on the steiner problem.
+\newblock {\em Journal of Combinatorial Theory, Series A}, 24(3):278--295,
+  1978.
+
+\bibitem{myue}
+M.~Yue.
+\newblock A report on the steiner ratio conjecture.
+\newblock {\em OR TRANSACTIONS}, 1:1--21, 2000.
+
+\end{thebibliography}
