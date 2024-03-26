@@ -228,8 +228,11 @@ In every exhibited case, the minimum spanning tree is not unique - i. e. it is i
   \caption{\label{fig:10}Visual explanation of local minimum property; as we change $A$ into $A'$ and $A''$, we decrease and increase $\operatorname{L_S}$ by 0.1, however we decrease $\operatorname{L_M}$ by 0.333 and increase it by 0.177, respectively.}
 \end{figure}
 
+Another observation is that in these local minima, most of the edges of the minimum spanning tree join in 60°. This is not 
+
+
 TODO: 60° are better than the rest, maybe
-\subsection{Theoretical approaches}
+\subsection{Overview of theoretical approaches}
 
 In the literate review, we have seen four different proofs for lower bounds using the same technique - focusing on the cherry. Each proof lists a ``web of conditions'' that the cherry and nearby points must satisfy - which yields a lower bound less than $\frac{\sqrt{3}}{2}$. The problem with this approach is that we are trying to prove that the cherry itself makes the Steiner ratio to be at least $\frac{\sqrt{3}}{2}$, but we cannot prove that the Steiner ratio is more than  $\frac{\sqrt{3}}{2}$, as we can produce set of terminals with Steiner ratio arbitrarily close to $\frac{\sqrt{3}}{2}$ such that the Steiner tree contains a cherry. This means that  these set of conditions can only prove that the Steiner ratio is equal to  $\frac{\sqrt{3}}{2}$, and if there are any assumptions that are not strong enough, then not even the equality can be proven. Therefore, the web of conditions using cherries is unlikely to produce a proof of the conjecture; if we are to prove the conjecture, we need to come up with conditions that apply everywhere. The biggest problem here is that there are no easy-to-state and strong enough global properties that do not have exceptions and corner cases.
 
