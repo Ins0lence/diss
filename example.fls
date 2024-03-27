@@ -773,6 +773,10 @@ INPUT .\plot9.png
 INPUT .\plot9.png
 INPUT .\plot9.png
 INPUT .\plot9.png
+INPUT .\example.bbl
+INPUT example.bbl
+INPUT .\example.bbl
+INPUT example.bbl
 INPUT .\plot8764.png
 INPUT .\plot8764.png
 INPUT plot8764.png
@@ -780,10 +784,6 @@ INPUT .\plot8764.png
 INPUT .\plot8764.png
 INPUT .\plot8764.png
 INPUT .\plot8764.png
-INPUT .\example.bbl
-INPUT example.bbl
-INPUT .\example.bbl
-INPUT example.bbl
 INPUT example.aux
 INPUT .\example.out
 INPUT .\example.out
@@ -798,8 +798,6 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi9.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi9.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb

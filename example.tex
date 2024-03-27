@@ -26,25 +26,31 @@ Finally, why is the proposed solution a good one?
 
 \section{Introduction}
 
-The idea of connecting various points in a network and producing a graph with the lowest possible cost has long been an a subject of research in Mathematics and Computer Science. Examples include the minimum spanning tree, which describes the lowest possible cost graph on an undirected weighted graph; the travelling salesman problem, which describes the shortest cycle with all vertices in a graph and algorithms such as Dijkstra's also rely on such concepts. The Steiner tree is related to the minimum spanning tree; the difference between these two objects is that the Steiner tree can use vertices outside of the set of vertices which must be in the minimum spanning tree, called \emph{Steiner points}.
+The idea of connecting various points in a network and producing a graph with the lowest possible cost has long been a subject of research in Mathematics and Computer Science. Examples include the minimum spanning tree, which describes the lowest possible cost graph on an undirected weighted graph; the travelling salesman problem, which describes the shortest cycle with all vertices in a graph and algorithms such as Dijkstra's also rely on such concepts. The Steiner tree is related to the minimum spanning tree; the difference between these two objects is that the Steiner tree can use vertices outside the set of vertices which must be in the minimum spanning tree, called \emph{Steiner points}.
 
 One can calculate the minimum spanning tree in polynomial time, but the Steiner tree problem is proven to be NP-complete \cite{Pettie2008}. For large graphs, this means that the Steiner tree might take infeasibly long time to calculate, while the minimum spanning tree can be calculated efficiently. This poses a practical question: for a given graph $G$, is it worth to calculate the Steiner tree instead of the minimum spanning tree?
 
  In answering such a question, one has to answer the feasibility and cost of adding new vertices to the graph, the available computing power and the savings in cost that the Steiner tree can offer compared to the minimum spanning tree. The third criteria can be measured by the \emph{Steiner ratio} - the ratio between the minimum spanning tree and the Steiner tree for a given graph. Calculating the Steiner ratio involves calculating both the Steiner tree and the minimum spanning tree, and thus it does not save the expensive Steiner tree calculation. Instead, we can approximate the Steiner ratio by stating infimum and supremum of the Steiner ratio.
  
-The supremum of the Steiner ratio is 1, because the Steiner tree cannot cost more than the minimum spanning tree. However, the infimum is not as obvious; it is different for different types of graphs. For graphs with arbitrary weights, the infimum does not exists - it is possible that all of the vertices are connected to a single Steiner point with arbitrarily large absolute value weights with negative signs. If we restrict the weights, for example by embedding the points in an Euclidean plane, we get different infimum Steiner ratios. In 1976, F. K. Hwang \cite{doi:10.1137/0130013} showed that if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their rectilinear distance, then the infimum and minimum Steiner ratio is $\frac{2}{3}$. Gilbert and Pollak conjectured in 1968 \cite{GP1968} if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their Euclidean distance, then the infimum and minimum Steiner ratio is $\frac{\sqrt{3}}{2}$, achieved in the case of an equilateral triangle. Over the years, there have been several attempts made (\cite{doi:10.1073/pnas.87.23.9464}, \cite{myue}) to prove the conjecture, but none of the attempts survived intense scrutiny \cite{Ivanov2012}. This paper proposes two different approaches to this problem and provide discussion on reviously used proof techniques.
+The supremum of the Steiner ratio is 1, because the Steiner tree cannot cost more than the minimum spanning tree. However, the infimum is not as obvious; it is different for different types of graphs. For graphs with arbitrary weights, the infimum does not exist - it is possible that all the vertices are connected to a single Steiner point with arbitrarily large absolute value weights with negative signs. If we restrict the weights, for example by embedding the points in an Euclidean plane, we get different infimum Steiner ratios. In 1976, F. K. Hwang \cite{doi:10.1137/0130013} showed that if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their rectilinear distance, then the infimum and minimum Steiner ratio is $\frac{2}{3}$. Gilbert and Pollak conjectured in 1968 \cite{GP1968} if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their Euclidean distance, then the infimum and minimum Steiner ratio is $\frac{\sqrt{3}}{2}$, achieved in the case of an equilateral triangle. Over the years, there have been several attempts made (\cite{doi:10.1073/pnas.87.23.9464}, \cite{myue}) to prove the conjecture, but none of the attempts survived intense scrutiny \cite{Ivanov2012}. This paper proposes two different approaches to this problem and provide discussion on previously used proof techniques.
 
 
-\section{Notation}
+\section{Notation and problem statement}
 
-Let $S$ be a set of points, also called \emph{terminals}, in an Euclidean plane, i.e. each member of $S$ is a tuple $(x,y)$ where $x,y\in\mathbb{R}$. Let us define the weighted graph $G$, where the vertices of $G$ correspond to $S$, $G$ is complete graph, and the weight of edge $e$ between vertices $A$ and $B$ is defined as $w(e)=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}$. Let us define $\operatorname{MST}(S)$ the minimum spanning tree of $G$. For the Steiner tree, we permitted to place at any coordinates; similarly to the terminals, each Steiner point must be connected to the rest of the points in $G$, including terminals and other Steiner points, and weights are defined the same way. Let us define $\operatorname{SMT}(S)$ to be the smallest cost Steiner tree of $G$. Let $\operatorname{len}(a,b)$ be the Euclidean distance between points $a$ and $b$; and let $\operatorname{L_S}(S)$ be the total cost of a SMT of S and let $\operatorname{L_M}(S)$ trees be the total cost of a MST of S.  Then, we can define the Steiner ratio of $S$ as $\operatorname{SR}(S)=\frac{\operatorname{L_M}(S)}{\operatorname{L_S}(S)}$.
+Let $S$ be a set of points, also called \emph{terminals}, in a Euclidean plane, i.e. each member of $S$ is a tuple $(x,y)$ where $x,y\in\mathbb{R}$. Let us define the weighted graph $G$, where the vertices of $G$ correspond to $S$, $G$ is complete graph, and the weight of edge $e$ between vertices $A$ and $B$ is defined as $w(e)=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}$. Let us define $\operatorname{MST}(S)$ the minimum spanning tree of $G$. For the Steiner tree, we permitted to place at any coordinates; similarly to the terminals, each Steiner point must be connected to the rest of the points in $G$, including terminals and other Steiner points, and weights are defined the same way. Let us define $\operatorname{SMT}(S)$ to be the smallest cost Steiner tree of $G$. 
+% By the \emph{topology} of $\operatorname{MST}(S)$ and . 
+Let $\operatorname{len}(a,b)$ be the Euclidean distance between points $a$ and $b$; and let $\operatorname{L_S}(S)$ be the total cost of a SMT of S and let $\operatorname{L_M}(S)$ trees be the total cost of a MST of S.  Then, we can define the Steiner ratio of $S$ as
+$$\operatorname{SR}(S)=\frac{\operatorname{L_M}(S)}{\operatorname{L_S}(S)}.$$
+
+
 Finally, let us define \emph{cherry} as a Steiner point connected to at least two terminals and any amount Steiner points.
+% \paragraph*{}
 
 
-\section{Background work}
+\section{History of the problem}
 \subsection{Pre-Modern history}
 
-The history of the conjecture stretches to back Fermat and Torricelli \cite{Brazil2014}, with only the special case of three points considered originally. Later, the generalised Fermat-Torricelli problem considered the case of $n$ points connected to a single point $S$ such that the sum of the sum of the length of the edges are minimised. The Euclidean Steiner tree problem was originally proposed and discussed by  the French mathematician Joseph Gergonne in 1810. Gergonne also proposed a general algorithm for finding the Steiner tree for $n$ points, which was later rediscovered by Melzak. This set forth a pattern of amnesia; the problem was subsequently discussed in various capacity by Gauss and Schumacher, who inspired two German mathematicians to investigate the problem restricted to four vertices, and was investigated by Czech mathematicians Jarník and Kössler and separately by the French mathematician Gustave Choquet; all of these groups seem to have been unaware of each other.
+The history of the conjecture stretches to back Fermat and Torricelli \cite{Brazil2014}, with only the special case of three points considered originally. Later, the generalized Fermat-Torricelli problem considered the case of $n$ points connected to a single point $S$ such that the sum of the sum of the length of the edges are minimized. The Euclidean Steiner tree problem was originally proposed and discussed by  the French mathematician Joseph Gergonne in 1810. Gergonne also proposed a general algorithm for finding the Steiner tree for $n$ points, which was later rediscovered by Melzak. This set forth a pattern of amnesia; the problem was subsequently discussed in various capacity by Gauss and Schumacher, who inspired two German mathematicians to investigate the problem restricted to four vertices, and was investigated by Czech mathematicians Jarník and Kössler and separately by the French mathematician Gustave Choquet; all of these groups seem to have been unaware of each other.
 
 However, none of these studies formed the basis of modern discussion around Steiner trees; instead, the basis of the modern discussion is ascribed to the 1941 textbook \emph{What is Mathematics?: An Elementary Approach to Ideas and Methods}\cite{courant1996mathematics}. While it is a highly regarded textbook, it mistakenly states that the problem was proposed and developed by the German mathematician Jakob Steiner, who in truth had virtually no involvement with the problem; nevertheless, most modern treatments follow this erroneous nomenclature.
 
@@ -72,7 +78,7 @@ It also establishes an algorithm for Steiner minimal tree and enumerates the num
 
 Finally, the paper conjectures the minimum Steiner ratio as $\frac{\sqrt{3}}{2}$, but does not prove it. However, it proves a much lower minimum Steiner ratio as $\frac{1}{2}$. % It also posits an argument similar to Lemma \ref{ft}; however, they are not exactly the same.
 
-To help illustrate some of the properties and prove others, the paper describes an analogous concept, ``a mechanical system in which the potential energy is a sum of distances between adjacent vertices''. The paper never rigorously proves that this system is equivalent to Steiner trees, although it cites other papers in which similar networks are described. For people trained in classical physics, this formulation might be self-evident; however, by today's standards this would not count as scientifically accurate.
+To help illustrate some properties and prove others, the paper describes an analogous concept, ``a mechanical system in which the potential energy is a sum of distances between adjacent vertices''. The paper never rigorously proves that this system is equivalent to Steiner trees, although it cites other papers in which similar networks are described. For people trained in classical physics, this formulation might be self-evident; however, by today's standards this would not count as scientifically accurate.
 
 
 \subsubsection{Pushing the lower bound}
@@ -86,18 +92,17 @@ To help illustrate some of the properties and prove others, the paper describes 
 Finally, \textbf{F. Chung and R. Graham} \cite{finalb} improved the lower bound to $0.824\dots$ in 1985. The proof uses induction; on a deeper level, the induction step is adding two points to form a cherry.  This is very similar to our approach, but instead we take away the terminals of the cherry, and use different conditions. Compared to the previous papers, it uses machine calculations instead of manual solving. Notably, it is explicitly verbose because ``on more than one occasion in the past, [...] proofs of bounds for this problem have proven to be incorrect'', which is in stark contrast with the following paper.
 
 \subsubsection{D. Z. Du and F. K. Hwang (1992) \cite{doi:10.1073/pnas.87.23.9464}}
-This paper claims to have solved the Gilbert-Pollak Conjecture; unlike the previous the previous attempts, this paper proposes a brand new approach: instead of looking at any specific substructures found within Steiner trees, it tries to argue about the general structure of the whole graph. This makes the approach more appealing than the previous approaches, as it uses little Euclidean geometry and thus easier to generalize to other distance metrics and other kinds of topological spaces (such as curved surfaces). However, it was later discovered that this proof has gaps which cannot easily be rectified \cite{Ivanov2012}, and nobody has resolved these gaps up to this day.
+This paper claims to have solved the Gilbert-Pollak Conjecture; unlike the previous  attempts, this paper proposes a brand-new approach: instead of looking at any specific substructures found within Steiner trees, it tries to argue about the general structure of the whole graph. This makes the approach more appealing than the previous approaches, as it uses little Euclidean geometry and thus easier to generalize to other distance metrics and other kinds of topological spaces (such as curved surfaces). However, it was later discovered that this proof has gaps which cannot easily be rectified \cite{Ivanov2012}, and nobody has resolved these gaps up to this day.
 
 
-The most important objects in the proof are the characteristic area of Steiner trees and their associated inner spanning trees. The characteristic area of a Steiner tree is a convex polygon which contains all of the edges and vertices of the given Steiner tree. This area, however, is not necessarily planar; it can also be a manifold. The inner spanning tree is a minimum spanning tree which fully lies inside the characteristic area. The paper argues that the smallest cardinality set of points $S$ such that $\operatorname{SR}<\frac{\sqrt{3}}{2}$ has an inner spanning tree, and the length of the inner spanning tree is less than $\frac{2}{\sqrt{3}}\operatorname{SR}$, and thus arrives at a contradiction.
+The most important objects in the proof are the characteristic area of Steiner trees and their associated inner spanning trees. The characteristic area of a Steiner tree is a convex polygon which contains all the edges and vertices of the given Steiner tree. This area, however, is not necessarily planar; it can also be a manifold. The inner spanning tree is a minimum spanning tree which fully lies inside the characteristic area. The paper argues that the smallest cardinality set of points $S$ such that $\operatorname{SR}<\frac{\sqrt{3}}{2}$ has an inner spanning tree, and the length of the inner spanning tree is less than $\frac{2}{\sqrt{3}}\operatorname{SR}$, and thus arrives at a contradiction.
 
-In his PhD thesis, P. O. De Wet \cite{po} criticises this and related papers written by Du-Hwang on the grounds that several objects and inner spanning trees in particular are not rigorously defined. Furthermore, he shows that inner spanning trees does not have an obvious definition which satisfies all required properties mentioned in the Du-Hwang paper, and thus the Gilbert-Pollak conjecture is still open. Nevertheless, he gives a rigorous definition of inner spanning trees and proves the conjecture for 7 points, but notes that a general proof would need some more work.
+In his PhD thesis, P. O. De Wet \cite{po} criticizes this and related papers written by Du-Hwang on the grounds that several objects and inner spanning trees in particular are not rigorously defined. Furthermore, he shows that inner spanning trees does not have an obvious definition which satisfies all required properties mentioned in the Du-Hwang paper, and thus the Gilbert-Pollak conjecture is still open. Nevertheless, he gives a rigorous definition of inner spanning trees and proves the conjecture for 7 points, but notes that a general proof would need some more work.
 
-\section{Discussion}
 
-This section will detail the various empirical evidence in support of the conjecture and proposes the first half of a proof that according to empirical results might be able the resolve the conjecture. Firstly, experiments using random graphs and machine learning will demonstrate that the conjecture in the average case usually holds. Then, something
+% This section will detail the various empirical evidence in support of the conjecture and proposes the first half of a proof that according to empirical results might be able the resolve the conjecture. Firstly, experiments using random graphs and machine learning will demonstrate that the conjecture in the average case usually holds. Then, something
 
-\subsection{Statistical analyis}
+\section{Empirical analysis}
 
 \begin{figure}
   \begin{center}
@@ -117,7 +122,7 @@ This section will detail the various empirical evidence in support of the conjec
   \begin{center}
   \includegraphics[scale=0.5]{plot4.png}
   \end{center}
-  \caption{\label{fig:4} The Steiner ratio of 1000000 3 terminal instances, seperated into 100 bins. Each point was uniformly generated in ([0;1], [0;1]).}
+  \caption{\label{fig:4} The Steiner ratio of 1000000 3 terminal instances, separated into 100 bins. Each point was uniformly generated in ([0;1], [0;1]).}
 \end{figure}
 
 
@@ -133,31 +138,30 @@ This section will detail the various empirical evidence in support of the conjec
   \begin{center}
   \includegraphics[scale=0.5]{plot5.png}
   \end{center}
-  \caption{\label{fig:5} The Steiner ratio of 100000 50 terminal instances, seperated into 100 bins. Each point was uniformly generated in ([0;1], [0;1]).}
+  \caption{\label{fig:5} The Steiner ratio of 100000 50 terminal instances, separated into 100 bins. Each point was uniformly generated in ([0;1], [0;1]).}
 \end{figure}
 
 \begin{figure}
   \begin{center}
   \includegraphics[scale=0.5]{plot6.png}
   \end{center}
-  \caption{\label{fig:6} The Steiner ratio of 10000 1000 terminal instances, seperated into 100 bins. Each point was uniformly generated in ([0;100], [0;100]).}
+  \caption{\label{fig:6} The Steiner ratio of 10000 1000 terminal instances, separated into 100 bins. Each point was uniformly generated in ([0;100], [0;100]).}
 \end{figure}
 
+ Gilbert and Pollak \cite{GP1968} give us the expected Steiner ratio on 3 terminals using three methods of terminal construction, while Pollak \cite{POLLAK1978278} reports that ``experiments by Gilbert indicate a typical shortening, for random points, of perhaps 2 to 3\%''. In this section, we will analyse various set of randomly generated terminals to give us an understanding of the average case usefulness of the Steiner tree. Each of the coordinated sets of terminals were generated by a uniform distribution from the interval $[0;1]$ (except where otherwise noted). We generate the minimum spanning trees using Prim's algorithm implemented in C, and we generate the Steiner minimum tree using the GeoSteiner algorithm.
 
-As we seen in the previous section, most of the studies on the subject were done before the millennium. A connected observation is that there are no fresh studies.Gilbert and Pollak \cite{GP1968} give a probability density function for the Steiner ratio for 3 points, while Pollak \cite{POLLAK1978278} reports that ``experiments by Gilbert indicate a typical shortening, for random points, of perhaps 2 to 3\%''. Perhaps, with today's computing power, we can find a set of points $S$ that violate the conjecture.
+Figure \ref{fig:1} shows the Steiner ratios of randomly generated points. The mean converges to roughly 0.967,  which is in line with the observation made by Gilbert; the minimum and maximum also converges to this number. No instance was found to have violated the conjecture; in fact, no random instance reached even the conjectured limit. This suggests that the conjecture is true and that this way of randomly generating points does not yield a low Steiner ratio. Furthermore, the global minimum is reached in the minimum amount of terminals (i.e. three terminals), and the minimums exhibit an increasing trend from that point on. Nonetheless, the global maximum also occurs at three terminals; as Figure \ref{fig:3} shows us, the standard deviation also decreases as we increase the number of terminals.
 
-Figure \ref{fig:1} shows the Steiner ratios of randomly generated points. The mean converges to roughly 0.967,  which is in line with the observation made by Gilbert; the minimum and maximum also converges to this number. No instance was found to have violated the conjecture; in fact, no random instance reached even the conjectured limit. This suggests that the conjecture is true and that this way of randomly generating points does not yield a low Steiner ratio. Furthermore, the global minimum is reached in the minimum amount of terminals (i.e. three terminals), and the minimums exhbit an increasing trend from that point on. Nonetheless, the global maximum also occurs at three terminals; as Figure \ref{fig:3} shows us, the standard deviation also decreases as we increase the number of terminals.
-
-In other words, Steiner trees are able to save the most on three terminals if the terminals are adequately placed; however, three terminals are also the most likely to to have a Steiner ratio of 1. We hypothesize that as we increase the number of terminals, we also increase the number of triangles we put down and thus we repeat (or sample) the experiment on three terminals inside the higher terminal instances. As Figure \ref{fig:4} shows us, the distribution of Steiner ratios on 3 terminals is heavily negatively skewed; thus, we are more likely to get high Steiner ratio triangles in high number of terminals as well. If this is indeed the case, then we should expect the distribution of the Steiner ratios of the higher terminal instances to be normal because of the Central Limit Theorem. Figure \ref{fig:5} tentatively confirms this; while the distribution is skewed negatively and the D'Agostino and Pearson's normality test reports a p-value of 7.4e-87, i.e. it is statistically very unlikely that it is drawn from a normal distribution, visually it looks very similar to a normal distribution; perhaps, we need to test it with even more terminals. The data from Figure \ref{fig:6} has a much higher p-value of 0.437, validating our hypothesis.
+In other words, Steiner trees are able to save the most on three terminals if the terminals are adequately placed; however, three terminals are also the most likely to have a Steiner ratio of 1. We hypothesize that as we increase the number of terminals, we also increase the number of triangles we put down, and thus we repeat (or sample) the experiment on three terminals inside the higher terminal instances. As Figure \ref{fig:4} shows us, the distribution of Steiner ratios on 3 terminals is heavily negatively skewed; thus, we are more likely to get high Steiner ratio triangles in high number of terminals as well. If this is indeed the case, then we should expect the distribution of the Steiner ratios of the higher terminal instances to be normal because of the Central Limit Theorem. Figure \ref{fig:5} tentatively confirms this; while the distribution is skewed negatively and the D'Agostino and Pearson's normality test reports a p-value of 7.4e-87, i.e. it is statistically very unlikely that it is drawn from a normal distribution, visually it looks very similar to a normal distribution; perhaps, we need to test it with even more terminals. The data from Figure \ref{fig:6} has a much higher p-value of 0.437, validating our hypothesis.
 
 Nevertheless, the measured mean (0.967) is lower than what we would expect based on the mean of the data presented in Figure \ref{fig:4}, which is 0.980. This might be explained by 4 and higher terminal full Steiner trees being more likely to form as we increase the number of terminals. 
 
 TODO: Maybe a paragraph about generating in rectangles?
 
-\subsection{Machine learning}
+\section{Machine learning}
 
 
-In the previous section, we looked at the average-case scenarios, however we did not at the worst case (meaning instances where the Steiner ratio is the lowest possible). To find out such instances, we could try to use optimizers to learn more about these instances. Firstly, we define the domain as $\mathbb{R}^{2n}$, where $n$ is is the number of terminals, and thus $\{p_1, p_2, \dots p_{2n}\}$ are the $x$ and $y$ coordinates of the terminals; let $S$ denote the associated set of terminals and then we can define the loss function as $\operatorname{SR}(n, S)$. To ensure that the loss function can be optimized well, we have to show that it is continious and differentiable in most places.
+In the previous section, we looked at the average-case scenarios, however we did not at the worst case (meaning instances where the Steiner ratio is the lowest possible). To find out such instances, we could try to use optimizers to learn more about these instances. Firstly, we define the domain as $n\mathbb{R}^{2}$, where $n$ is the number of terminals, and thus $\{\{x_1, y_1\}, \{x_2, y_2\} \dots \{x_n, y_n\}\}$ are the $x$ and $y$ coordinates of the terminals; let $S=\{s_1, s_2, \dots s_n\}$ denote the associated set of terminals, and then we can define the loss function as $\operatorname{SR}(S)$. To ensure that the loss function can be optimized well, we have to show that it is continuous and differentiable in most places.
 
 \begin{lemma}
   $\operatorname{SR}$ is continuous at almost all values of the domain for all $n$.
@@ -165,23 +169,24 @@ In the previous section, we looked at the average-case scenarios, however we did
 \begin{proof}
   To prove this statement, we need to prove that both $\operatorname{L_S}$ and $\operatorname{L_M}$ is continuous.
 
-  Let $S$ be a set of $n$ terminals and let $S_{1\dots n}$ be the terminals; wlog let us consider the case where we change the $x$ coordinate of $S_1$; let $S_{1\dots n}^x$ and $S_{1\dots n}^y$ be the coordinates of the terminals.
+  Let us use the notation as defined above; firstly, to prove that $\operatorname{L_M}$ is continuous at almost all values of the domain, we only need to prove  that $\operatorname{L_M}$ is continuous at all possible $x_1$, if all other coordinates are fixed. This is because the ordering of the terminals in the input does not matter (i.e. $\operatorname{L_M}(\{\{1,2\}, \{3,4\}, \{5,6\}\})=\operatorname{L_M}(\{\{5,6\}, \{1,2\}, \{3,4\}\}))\\$ and the length of the minimum spanning tree is preserved under 90° rotation (i.e. $\operatorname{L_M}(\{\{1,2\}, \{3,4\}, \{5,6\}\})=\\\operatorname{L_M}(\{\{2,1\}, \{4,3\}, \{6,5\}\})$).
 
-  There are two cases for $S$ in $\operatorname{L_M}$; $S_1$ can be in a breakpoint where if we change $x$ we get two different minimum spanning tree topologies depending on the direction of the change or $S_1$ is not in a breakpoint, meaning changing the coordinate either way will result in the same topology.
+  There are two cases for $s_1$ in the minimum spanning tree; $s_1$ can be in a breakpoint where if we change $x_1$ we get two different minimum spanning tree topologies depending on the direction of the change or $s_1$ is not in a breakpoint, meaning changing the coordinate either way will result in the same topology.
 
-  If $S_1$ is not in a breakpoint, then $\operatorname{L_M}$ is continuous in $S_1$ because we are only changing the length of one edge in the minimum spanning tree; if we assume wlog that $S_1$ is connected to $S_2$ and ${S_1^x}'$ is the new $x$ coordinate of $S_1$, then the new weight of the minimum spanning tree is
+  If $s_1$ is not in a breakpoint, then $\operatorname{L_M}$ is continuous in $s_1$ because we are only changing the length of one edge in the minimum spanning tree; if we assume wlog that $s_1$ is connected to $s_2$ and $x_1'$ is the new $x$ coordinate of $s_1$, then the new weight of the minimum spanning tree is
   
-  $$-\sqrt{(S_1^x-S_2^x)^2 + (S_1^y-S_2^y)^2} + \sqrt{({S_1^x}'-S_2^x)^2 + (S_1^y-S_2^y)^2}$$
+  $$-\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} + \sqrt{(x_1'-x_2)^2 + (y_1-y_2)^2}$$
 
   which is a composition of continuous functions and thus is continuous.
 
-  If $S_1$ is in a breakpoint, then it must be both right and left continuous. Wlog let us assume it is not left continuous; meaning the limit of the left topology has a larger limit at $S_1$ than the right topology; this cannot happen, because then we could produce a minimum spanning tree by using the right topology instead of the left topology.
+  If $s_1$ is in a breakpoint, then it must be both right and left continuous. Wlog let us assume it is not left continuous; meaning the limit of the left topology has a larger limit at $s_1$ than the right topology; this cannot happen, because then we could produce a minimum spanning tree by using the right topology instead of the left topology.
 
   % because as we are continuously change the coordinate of $S_1$, we only change one edge in the 
 
-  Suppose $\operatorname{L_S}$ is discontinuous at $S_1$, meaning that (using the $\epsilon-\delta$  definition of continuity) there is an $\epsilon$ such that we cannot find a $\delta$ that satisfies the continuity condition. In other words, there exits a terminal $T$ such that if we change one of its coordinates, $\operatorname{L_S}$ performs a sudden jump. 
+  For $\operatorname{L_S}$, we also only need to prove that $\operatorname{L_S}$ is continuous at all possible $x_1$, if all other coordinates are fixed, using the same thought process.
+  Suppose $\operatorname{L_S}$ is discontinuous at $x_1$, meaning that (using the $\epsilon-\delta$  definition of continuity) there is an $\epsilon$ such that we cannot find a $\delta$ that satisfies the continuity condition. In other words, there exists a terminal $s_1$ such that if we change the $x$ coordinate, $\operatorname{L_S}$ performs a sudden jump. 
 
-  Similar to the breakpoint argument for $\operatorname{L_M}$, this cannot happen because then we could produce a Steiner tree with lower cost on the higher side of the discontinuity by constructing the Steiner tree on the lower side of the discontinuity and treating the terminal  $S_1'$ as a Steiner point and connecting it to the position of the terminal on the higher side. TODO: This is a bit unclear, maybe ask Yiannis.
+  Similar to the breakpoint argument for $\operatorname{L_M}$, this cannot happen because then we could produce a Steiner tree with lower cost on the higher side of the discontinuity by constructing the Steiner tree on the lower side of the discontinuity and treating the terminal  $s_1'$ as a Steiner point and connecting it to the position of the terminal on the higher side. TODO: This is a bit unclear, maybe ask Yiannis.
 
   Thus, because the quotient of two continuous functions are continuous (expect where the denominator is 0, i.e. the instances where all terminals have the exact same coordinate), the $\operatorname{SR}$ function is continuous.
 
@@ -194,31 +199,31 @@ In the previous section, we looked at the average-case scenarios, however we did
 
 (TODO: maybe prove it? we prove continuity for global minima later, this is not really relevant) 
 
-If this indeed holds, then optimizers should be able to lower the Steiner ratio succesfully. Figure \ref{fig:7} demonstrates that some optimizers can indeed be used to find instances with low Steiner ratios; if we accept the conjecture, then they are able to find instances with the global minimum Steiner ratio. Naturally, no instances were found with Steiner ratio less than $\frac{\sqrt{3}}{2}$. (TODO: maybe add more instances and demonstrate this claim?) In the instance of Figure \ref{fig:7}, the optimization process yielded 4 equilateral triangles, however the optimizer can get trapped in local minima, as Figure \ref{fig:8} demonstrates. After repeating the optimization process 100 times with a different set of random points in each run, we get a mean Steiner ratio of 0.870.
+If this indeed holds, then optimizers should be able to lower the Steiner ratio successfully. Figure \ref{fig:7} demonstrates that some optimizers can indeed be used to find instances with low Steiner ratios; if we accept the conjecture, then they are able to find instances with the global minimum Steiner ratio. Naturally, no instances were found with Steiner ratio less than $\frac{\sqrt{3}}{2}$. (TODO: maybe add more instances and demonstrate this claim?) In the instance of Figure \ref{fig:7}, the optimization process yielded 4 equilateral triangles, however the optimizer can get trapped in local minima, as Figure \ref{fig:8} demonstrates. After repeating the optimization process 100 times with a different set of random points in each run, we get a mean Steiner ratio of 0.870.
 
 
 \begin{figure}
   \begin{center}
   \includegraphics[scale=0.5]{plot7.png}
   \end{center}
-  \caption{\label{fig:7}10 random points optimized for $\operatorname{SR}(10, S)$ with SLSQP; $\operatorname{SR}(10, S)=0.866\dots\approx\frac{\sqrt{3}}{2}$}
+  \caption{\label{fig:7}10 random points optimized for $\operatorname{SR}(S)$ with SLSQP; $\operatorname{SR}(S)=0.866\dots\approx\frac{\sqrt{3}}{2}$}
 \end{figure}
 
 \begin{figure}
   \begin{center}
   \includegraphics[scale=0.5]{plot8715.png}
   \end{center}
-  \caption{\label{fig:8}10 random points optimized for $\operatorname{SR}(10, S)$ with SLSQP; $\operatorname{SR}(10, S)\approx 0.8715$}
+  \caption{\label{fig:8}10 random points optimized for $\operatorname{SR}(S)$ with SLSQP; $\operatorname{SR}(S)\approx 0.8715$}
 \end{figure}
 
-\subsubsection{Local minima}
+\subsection{Local minima}
 
 As Figure \ref{fig:8} and \ref{fig:9} demonstrates, the optimizer was not able to find the hypothesized global minimum in all cases, because it got stuck in local minima. From these examples, we can extrapolate properties of local minima and thus global minima of the Steiner ratio function.
 
-In every exhibited case, the minimum spanning tree is not unique - i. e. it is in a breakpoint. Intuitively, this is because if we slide the terminals along the Steiner tree edge, we change the length of the Steiner edge and thus the weight of the Steiner tree linearly. If we increase the Steiner edge, then we only increase one edge in the minimum spanning tree, and this increase is less than or equal to the increase of the Steiner edge. If we decrease the Steiner edge, then we decrease two edges in the minimum spanning tree, and this decrease is more than or equal to the decrease of the Steiner edge. Figure \ref{fig:10} demonstrates this. Thus we conjecture that,
+In every exhibited case, the minimum spanning tree is not unique - i.e. it is in a breakpoint. Intuitively, this is because if we slide the terminals along the Steiner tree edge, we change the length of the Steiner edge and thus the weight of the Steiner tree linearly. If we increase the Steiner edge, then we only increase one edge in the minimum spanning tree, and this increase is less than or equal to the increase of the Steiner edge. If we decrease the Steiner edge, then we decrease two edges in the minimum spanning tree, and this decrease is more than or equal to the decrease of the Steiner edge. Figure \ref{fig:10} demonstrates this. Thus, we conjecture that,
 
 \begin{conjecture}
-  Let $n$ be the number of terminals and let $S$ be a input vector for $\operatorname{SR}$. $\operatorname{SR}(n, S)$ is a local minimum if and only if for every terminal, there exitsat least two $\operatorname{MST}(S)$ topologies where the degree of the terminal is different.
+  Let $n$ be the number of terminals and let $S$ be a input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if and only if for every terminal, there exits at least two $\operatorname{MST}(S)$ topologies where the degree of the terminal is different.
 \end{conjecture}
 
 \begin{figure}[h!]
@@ -232,7 +237,7 @@ Another observation is that in these local minima, most of the edges of the mini
 
 
 TODO: 60° are better than the rest, maybe
-\subsection{Overview of theoretical approaches}
+\section{Overview of theoretical approaches}
 
 In the literate review, we have seen four different proofs for lower bounds using the same technique - focusing on the cherry. Each proof lists a ``web of conditions'' that the cherry and nearby points must satisfy - which yields a lower bound less than $\frac{\sqrt{3}}{2}$. The problem with this approach is that we are trying to prove that the cherry itself makes the Steiner ratio to be at least $\frac{\sqrt{3}}{2}$, but we cannot prove that the Steiner ratio is more than  $\frac{\sqrt{3}}{2}$, as we can produce set of terminals with Steiner ratio arbitrarily close to $\frac{\sqrt{3}}{2}$ such that the Steiner tree contains a cherry. This means that  these set of conditions can only prove that the Steiner ratio is equal to  $\frac{\sqrt{3}}{2}$, and if there are any assumptions that are not strong enough, then not even the equality can be proven. Therefore, the web of conditions using cherries is unlikely to produce a proof of the conjecture; if we are to prove the conjecture, we need to come up with conditions that apply everywhere. The biggest problem here is that there are no easy-to-state and strong enough global properties that do not have exceptions and corner cases.
 
@@ -240,18 +245,19 @@ In the literate review, we have seen four different proofs for lower bounds usin
 the need for global properties
 
 \section{Conclusions}
+
+
+
+\bibliographystyle{abbrv}
+\bibliography{example}
+
 \section{Appendix}
 
 \begin{figure}[h!]
   \begin{center}
   \includegraphics[scale=0.5]{plot8764.png}
   \end{center}
-  \caption{\label{fig:9}10 random points optimized for $\operatorname{SR}(10, S)$ with SLSQP; $\operatorname{SR}(10, S)\approx 0.8764$}
+  \caption{\label{fig:9}10 random points optimized for $\operatorname{SR}(S)$ with SLSQP; $\operatorname{SR}(S)\approx 0.8764$}
 \end{figure}
-
-
-\bibliographystyle{abbrv}
-\bibliography{example}
-
 
 \end{document}
