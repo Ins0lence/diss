@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex example"] 1711499980.35836 "example.aux" "example.bbl" "example" 1711499991.49906 0
-  "./example.bib" 1710937379 9204 083f0adbffa04cacef7b985db656bbb5 ""
+["bibtex example"] 1711670800.72492 "example.aux" "example.bbl" "example" 1711672724.43828 0
+  "./example.bib" 1711629198 9368 7dfd232bdd79e124e79f9e098e7b10d3 ""
   "C:/Program Files/MiKTeX/bibtex/bst/bibtex/abbrv.bst" 1291864736 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "example.aux" 1711499990 8046 97c4f00ac8b72387eedafe670f969037 "pdflatex"
+  "example.aux" 1711672723 9041 a9f90d4ccb80ccca5e749e139464bb57 "pdflatex"
   (generated)
   "example.bbl"
   "example.blg"
   (rewritten before read)
-["pdflatex"] 1711499988.7107 "f:/l5proj/diss/example.tex" "example.pdf" "example" 1711499991.50046 0
+["pdflatex"] 1711672721.33142 "f:/l5proj/diss/example.tex" "example.pdf" "example" 1711672724.43956 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1136772254 4484 b828043cbd581d289d955903c1339981 ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/helvetic/phvb8t.tfm" 1136772254 6628 34c39492c0adc454c1c199922bba8363 ""
@@ -46,6 +46,7 @@
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb" 1247593066 31983 5d427b4625a4a5976c1b1c43cab14bba ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247593066 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1247593067 36094 798f80770b3b148ceedd006d487db67c ""
+  "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247593067 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247593067 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1247593066 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247593067 32587 65067f817f408bc71a7312f3d9828a9b ""
@@ -108,6 +109,8 @@
   "C:/Users/xdddd/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0900.pk" 1710937064 10472 cb2972635d6c1876dbbe9a161cc771b4 ""
   "C:/Users/xdddd/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1667333360 10778195 ce1e76fe91a6cf9cf1bab61a137642fe ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aeb10.tfm" 1057858200 6132 78e5594f4fe2bad148a7cb22806d1f42 ""
+  "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aer5.tfm" 1057858200 6060 e6698dd00b0c710db67c8f65752c199a ""
+  "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aer6.tfm" 1057858200 6108 fc653ad7645037d415b4449e8bf7cf8f ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aer9.tfm" 1057858200 6076 dd5a5352d066d5b2d2092b63c8cabf28 ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aeti9.tfm" 1057858200 7240 b5c2a48053d60f3c984fb3fe77523873 ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/vf/public/ae/aeb10.vf" 1057858200 3204 33087d8d1b5ca03fcc323578bd8c2ab9 ""
@@ -136,13 +139,15 @@
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1575571282 9715 b051d5b493d9fe5f4bc251462d039e5f ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/tex/latex/sttools/flushend.sty" 1634195615 28406 d50b1f1e09a8ea19dbf64f26f6df71ab ""
   "CompSci_colour.pdf" 1690209008 28075 c76557abb17c39d627f34723eeeb3731 ""
-  "example.aux" 1711499990 8046 97c4f00ac8b72387eedafe670f969037 "pdflatex"
-  "example.bbl" 1711499980 2983 7be35038bb482ded1e59f064cc4dd8b5 "bibtex example"
-  "example.out" 1711499990 2528 d2cc1b478adbebe2106f21aa84f799ee "pdflatex"
-  "example.tex" 1711499987 30030 0fde8ffc18bbd88f952fc162ef01a72c ""
-  "f:/l5proj/diss/example.tex" 1711499987 30030 0fde8ffc18bbd88f952fc162ef01a72c ""
+  "example.aux" 1711672723 9041 a9f90d4ccb80ccca5e749e139464bb57 "pdflatex"
+  "example.bbl" 1711670801 3144 2ee1443baf970e7249a38f3250790415 "bibtex example"
+  "example.out" 1711672723 2907 d75be30cc8de51b24e6f734437f3489d "pdflatex"
+  "example.tex" 1711672720 36767 2fbe4776c8015a0c3238b8ecdde9a389 ""
+  "f:/l5proj/diss/example.tex" 1711672720 36767 2fbe4776c8015a0c3238b8ecdde9a389 ""
   "mpaper.cls" 1711129316 50586 6919a749f04a448354c7164463a01094 ""
   "plot1.png" 1710879832 47391 278e79845466c00be5250de261cf1383 ""
+  "plot10.png" 1711638481 18465 d26a662f8bc676dcaac04ab9d8c3257d ""
+  "plot11.png" 1711648141 38505 e0eb36bfb0eaf82d689eab2207962484 ""
   "plot2.png" 1710879832 47418 1a22b28d8055c438befb7ce732357283 ""
   "plot3.png" 1710963879 30639 adfc0ec199ff34390eb940bc1c298757 ""
   "plot4.png" 1711064839 15824 8830d047316014305f12f9cf0b1b30bf ""

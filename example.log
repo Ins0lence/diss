@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.1)  27 MAR 2024 00:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.1)  29 MAR 2024 00:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -436,7 +436,7 @@ Package hyperref Info: Link coloring ON on input line 6.
 \c@theorem=\count305
 \c@conjecture=\count306
 \c@definition=\count307
-<CompSci_colour.pdf, id=63, 340.27126pt x 49.18375pt>
+<CompSci_colour.pdf, id=71, 340.27126pt x 49.18375pt>
 File: CompSci_colour.pdf Graphic file (type pdf)
 <use CompSci_colour.pdf>
 Package pdftex.def Info: CompSci_colour.pdf  used on input line 17.
@@ -559,32 +559,32 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\new@ifnextchar' on input line 94.
 
-<plot2.png, id=127, 416.2752pt x 312.2064pt>
+<plot2.png, id=135, 416.2752pt x 312.2064pt>
 File: plot2.png Graphic file (type png)
 <use plot2.png>
 Package pdftex.def Info: plot2.png  used on input line 109.
 (pdftex.def)             Requested size: 208.13708pt x 156.10281pt.
-<plot3.png, id=129, 422.0568pt x 312.2064pt>
+<plot3.png, id=137, 422.0568pt x 312.2064pt>
 File: plot3.png Graphic file (type png)
 <use plot3.png>
 Package pdftex.def Info: plot3.png  used on input line 116.
 (pdftex.def)             Requested size: 211.02788pt x 156.10281pt.
-<plot4.png, id=132, 431.4519pt x 312.2064pt>
+<plot4.png, id=140, 431.4519pt x 312.2064pt>
 File: plot4.png Graphic file (type png)
 <use plot4.png>
 Package pdftex.def Info: plot4.png  used on input line 123.
 (pdftex.def)             Requested size: 215.72542pt x 156.10281pt.
-<plot1.png, id=133, 412.6617pt x 312.2064pt>
+<plot1.png, id=141, 412.6617pt x 312.2064pt>
 File: plot1.png Graphic file (type png)
 <use plot1.png>
 Package pdftex.def Info: plot1.png  used on input line 132.
 (pdftex.def)             Requested size: 206.33034pt x 156.10281pt.
-<plot5.png, id=134, 419.166pt x 312.2064pt>
+<plot5.png, id=142, 419.166pt x 312.2064pt>
 File: plot5.png Graphic file (type png)
 <use plot5.png>
 Package pdftex.def Info: plot5.png  used on input line 139.
 (pdftex.def)             Requested size: 209.58249pt x 156.10281pt.
-<plot6.png, id=135, 412.6617pt x 312.2064pt>
+<plot6.png, id=143, 412.6617pt x 312.2064pt>
 File: plot6.png Graphic file (type png)
 <use plot6.png>
 Package pdftex.def Info: plot6.png  used on input line 146.
@@ -597,73 +597,81 @@ Overfull \hbox (2.08417pt too wide) in paragraph at lines 202--203
 \T1/aer/m/n/9 Steiner ra-tio. Nat-u-rally, no in-stances were found with Steiner
  []
 
-<plot7.png, id=171, 395.3169pt x 298.4751pt>
+<plot7.png, id=179, 395.3169pt x 298.4751pt>
 File: plot7.png Graphic file (type png)
 <use plot7.png>
 Package pdftex.def Info: plot7.png  used on input line 207.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
-<plot8715.png, id=172, 395.3169pt x 298.4751pt>
+<plot8715.png, id=180, 395.3169pt x 298.4751pt>
 File: plot8715.png Graphic file (type png)
 <use plot8715.png>
 Package pdftex.def Info: plot8715.png  used on input line 214.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./plot7.png> <./plot8715.png>]
-<plot9.png, id=186, 111.72119pt x 104.74576pt>
+[5 <./plot7.png> <./plot8715.png>]
+<plot9.png, id=194, 111.72119pt x 104.74576pt>
 File: plot9.png Graphic file (type png)
 <use plot9.png>
-Package pdftex.def Info: plot9.png  used on input line 231.
+Package pdftex.def Info: plot9.png  used on input line 241.
 (pdftex.def)             Requested size: 145.2375pt x 136.16946pt.
-
-Overfull \hbox (41.76799pt too wide) in paragraph at lines 240--240
-[]\secfnt OVERVIEW OF THE-O-RET-I-CAL AP-PROACHES 
- []
-
-(example.bbl)
-<plot8764.png, id=187, 395.3169pt x 298.4751pt>
-File: plot8764.png Graphic file (type png)
-<use plot8764.png>
-Package pdftex.def Info: plot8764.png  used on input line 258.
+<plot10.png, id=197, 401.8212pt x 298.4751pt>
+File: plot10.png Graphic file (type png)
+<use plot10.png>
+Package pdftex.def Info: plot10.png  used on input line 274.
+(pdftex.def)             Requested size: 200.9101pt x 149.23718pt.
+<plot11.png, id=198, 395.3169pt x 298.4751pt>
+File: plot11.png Graphic file (type png)
+<use plot11.png>
+Package pdftex.def Info: plot11.png  used on input line 281.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-- LAST -
-Extra skip:13.49614pt
-Left:576.20018pt/1.74596pt
-Right:564.45pt/0.0pt
-Split: 577.32509pt
-Output:577.32509pt
-Pageshrink: -2.0pt
-Pagestretch: -4.0pt
-@colht:666.0pt
-FLUSHEND [output]: 577.32509pt
-FLUSHEND [leftcolumn badness]: 2
-FUSHEND [rightcolumn badness]: 10000
-[6 <./plot9.png>] [7
+[6 <./plot9.png> <./plot10.png>] (example.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- <./plot8764.png>] (example.aux)
+)
+<plot8764.png, id=215, 395.3169pt x 298.4751pt>
+File: plot8764.png Graphic file (type png)
+<use plot8764.png>
+Package pdftex.def Info: plot8764.png  used on input line 314.
+(pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
+ [7 <./plot11.png> <./plot8764.png>]
+Overfull \hbox (15.07265pt too wide) in paragraph at lines 335--337
+\T1/aer/m/n/9 There-fore, $\OML/cmm/m/it/9 P[]$ \T1/aer/m/n/9 is the point which sat-is-fies $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 P[]A\OT1/cmr/m/n/9 ) = [](\OML/cmm/m/it/9 P[]B\OT1/cmr/m/n/9 ) =
+ []
+
+- LAST -
+Extra skip:0.0pt
+Left:312.88177pt/2.25pt
+Right:332.41841pt/0.0pt
+Split: 322.90009pt
+Output:322.90009pt
+Pageshrink: 0.0pt
+Pagestretch: 0.0pt
+@colht:666.0pt
+FLUSHEND [output]: 322.90009pt
+FLUSHEND [leftcolumn badness]: 57
+FUSHEND [rightcolumn badness]: 19
+[8] (example.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: D2CC1B478ADBEBE2106F21AA84F799EE;2528.
+(rerunfilecheck)             Checksum: D75BE30CC8DE51B24E6F734437F3489D;2907.
  ) 
 Here is how much of TeX's memory you used:
- 12080 strings out of 475385
- 184809 string characters out of 2786722
- 554767 words of memory out of 3000000
- 33212 multiletter control sequences out of 15000+600000
- 513342 words of font info for 76 fonts, out of 8000000 for 9000
+ 12115 strings out of 475385
+ 185222 string characters out of 2786722
+ 553022 words of memory out of 3000000
+ 33234 multiletter control sequences out of 15000+600000
+ 516336 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,7n,91p,1464b,444s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\xdddd\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk>{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on example.pdf (7 pages, 507629 bytes).
+ 87i,9n,91p,1464b,444s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\xdddd\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk>{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on example.pdf (8 pages, 581697 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

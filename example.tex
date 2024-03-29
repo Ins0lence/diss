@@ -37,7 +37,7 @@ The supremum of the Steiner ratio is 1, because the Steiner tree cannot cost mor
 
 \section{Notation and problem statement}
 
-Let $S$ be a set of points, also called \emph{terminals}, in a Euclidean plane, i.e. each member of $S$ is a tuple $(x,y)$ where $x,y\in\mathbb{R}$. Let us define the weighted graph $G$, where the vertices of $G$ correspond to $S$, $G$ is complete graph, and the weight of edge $e$ between vertices $A$ and $B$ is defined as $w(e)=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}$. Let us define $\operatorname{MST}(S)$ the minimum spanning tree of $G$. For the Steiner tree, we permitted to place at any coordinates; similarly to the terminals, each Steiner point must be connected to the rest of the points in $G$, including terminals and other Steiner points, and weights are defined the same way. Let us define $\operatorname{SMT}(S)$ to be the smallest cost Steiner tree of $G$. 
+Let $S$ be a set of points, also called \emph{terminals}, in a Euclidean plane, i.e. each member of $S$ is a tuple $(x,y)$ where $x,y\in\mathbb{R}$. Let us define the weighted graph $G$, where the vertices of $G$ correspond to $S$, $G$ is complete graph, and the weight of edge $e$ between vertices $A$ and $B$ is defined as $w(e)=\operatorname{len}(e)$, where $len(e) = \sqrt{(x_A-x_B)^2+(y_A-y_B)^2}$. Furthermore, let us define $\operatorname{MST}(S)$ the minimum spanning tree of $G$. For the Steiner tree, we permitted to place at any coordinates; similarly to the terminals, each Steiner point must be connected to the rest of the points in $G$, including terminals and other Steiner points, and weights are defined the same way. Let us define $\operatorname{SMT}(S)$ to be the smallest cost Steiner tree of $G$. 
 % By the \emph{topology} of $\operatorname{MST}(S)$ and . 
 Let $\operatorname{len}(a,b)$ be the Euclidean distance between points $a$ and $b$; and let $\operatorname{L_S}(S)$ be the total cost of a SMT of S and let $\operatorname{L_M}(S)$ trees be the total cost of a MST of S.  Then, we can define the Steiner ratio of $S$ as
 $$\operatorname{SR}(S)=\frac{\operatorname{L_M}(S)}{\operatorname{L_S}(S)}.$$
@@ -183,12 +183,12 @@ In the previous section, we looked at the average-case scenarios, however we did
 
   % because as we are continuously change the coordinate of $S_1$, we only change one edge in the 
 
-  For $\operatorname{L_S}$, we also only need to prove that $\operatorname{L_S}$ is continuous at all possible $x_1$, if all other coordinates are fixed, using the same thought process.
-  Suppose $\operatorname{L_S}$ is discontinuous at $x_1$, meaning that (using the $\epsilon-\delta$  definition of continuity) there is an $\epsilon$ such that we cannot find a $\delta$ that satisfies the continuity condition. In other words, there exists a terminal $s_1$ such that if we change the $x$ coordinate, $\operatorname{L_S}$ performs a sudden jump. 
+  For $\operatorname{L_S}$, we can repeat exactly the same argument.
+  % Suppose $\operatorname{L_S}$ is discontinuous at $x_1$, meaning that (using the $\epsilon-\delta$  definition of continuity) there is an $\epsilon$ such that we cannot find a $\delta$ that satisfies the continuity condition. In other words, there exists a terminal $s_1$ such that if we change the $x$ coordinate, $\operatorname{L_S}$ performs a sudden jump. 
 
-  Similar to the breakpoint argument for $\operatorname{L_M}$, this cannot happen because then we could produce a Steiner tree with lower cost on the higher side of the discontinuity by constructing the Steiner tree on the lower side of the discontinuity and treating the terminal  $s_1'$ as a Steiner point and connecting it to the position of the terminal on the higher side. TODO: This is a bit unclear, maybe ask Yiannis.
+  % Similar to the breakpoint argument for $\operatorname{L_M}$, this cannot happen because then we could produce a Steiner tree with lower cost on the higher side of the discontinuity by constructing the Steiner tree on the lower side of the discontinuity and treating the terminal  $s_1'$ as a Steiner point and connecting it to the position of the terminal on the higher side. TODO: This is a bit unclear, maybe ask Yiannis.
 
-  Thus, because the quotient of two continuous functions are continuous (expect where the denominator is 0, i.e. the instances where all terminals have the exact same coordinate), the $\operatorname{SR}$ function is continuous.
+  Thus, because the quotient of two continuous functions are continuous (expect where the denominator is 0, i.e. the instances where all terminals have the exact same coordinates), the $\operatorname{SR}$ function is continuous.
 
   % Suppose there exists a set of points $T$ such that $\operatorname{L_S}(T)$ or $\operatorname{L_M}(T)$ is discontinuous. This means that 
 \end{proof}
@@ -220,11 +220,21 @@ If this indeed holds, then optimizers should be able to lower the Steiner ratio 
 
 As Figure \ref{fig:8} and \ref{fig:9} demonstrates, the optimizer was not able to find the hypothesized global minimum in all cases, because it got stuck in local minima. From these examples, we can extrapolate properties of local minima and thus global minima of the Steiner ratio function.
 
-In every exhibited case, the minimum spanning tree is not unique - i.e. it is in a breakpoint. Intuitively, this is because if we slide the terminals along the Steiner tree edge, we change the length of the Steiner edge and thus the weight of the Steiner tree linearly. If we increase the Steiner edge, then we only increase one edge in the minimum spanning tree, and this increase is less than or equal to the increase of the Steiner edge. If we decrease the Steiner edge, then we decrease two edges in the minimum spanning tree, and this decrease is more than or equal to the decrease of the Steiner edge. Figure \ref{fig:10} demonstrates this. Thus, we conjecture that,
+In every exhibited case, the minimum spanning tree is not unique - i.e. it is in a breakpoint. Intuitively, this is because if we slide the terminals along the Steiner tree edge, we change the length of the Steiner edge and thus the weight of the Steiner tree linearly. If we increase the Steiner edge, then we only increase one edge in the minimum spanning tree, and this increase is less than or equal to the increase of the Steiner edge. If we decrease the Steiner edge, then we decrease two edges in the minimum spanning tree, and this decrease is more than or equal to the decrease of the Steiner edge. Figure \ref{fig:10} demonstrates this. Thus, 
 
-\begin{conjecture}
-  Let $n$ be the number of terminals and let $S$ be a input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if and only if for every terminal, there exits at least two $\operatorname{MST}(S)$ topologies where the degree of the terminal is different.
-\end{conjecture}
+\begin{lemma}
+  \label{c:1}
+  Let $n$ be the number of terminals and let $S$ be an input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if for every terminal $s_i$, $i\in\{1,2,\dots n\}$, there exists at least one $M=\operatorname{MST}(S)$ such that $M$ has at least one edge $s_is_m$, $m, k\in \in\{1,2,\dots n\}$ such that we can substitute $s_is_m$ with another edge $s_ks_m$  $m, k\in \in\{1,2,\dots n\}$ to produce $M'$, and the weight of $M$ and $M'$ are equal.
+\end{lemma}
+\begin{proof}
+  Let $S$ be a set of terminals such that $SR(S)$ is a local minimum; this means that if we fix every coordinate but $x_1$, we get an $\mathbb{R}\rightarrow \mathbb{R}$ function that has a local minimum at $x_1$; let us name this function 
+  
+  $$\operatorname{SR^1}(x)=\frac{\operatorname{L_S^1}(x)}{\operatorname{L_M^1}(x)}$$
+  
+  Without loss of generality, let us assume that the Steiner edge connected to $s_1$ is parallel to the $x$ axis and the Steiner point connected to $s_1$ has a lower $x$ value than $s_1$ (e.g. Steiner point connected to $s_1$ is left of $s_1$); we can do this because length is preserved under rotation. 
+
+  Because we are in a local minimum, as we increase $x$ from $x_1$ and thus the length of the Steiner edge connected to $s_1$, $\operatorname{SR_1}(x)$ must also increase.
+\end{proof}
 
 \begin{figure}[h!]
   \begin{center}
@@ -233,16 +243,62 @@ In every exhibited case, the minimum spanning tree is not unique - i.e. it is in
   \caption{\label{fig:10}Visual explanation of local minimum property; as we change $A$ into $A'$ and $A''$, we decrease and increase $\operatorname{L_S}$ by 0.1, however we decrease $\operatorname{L_M}$ by 0.333 and increase it by 0.177, respectively.}
 \end{figure}
 
-Another observation is that in these local minima, most of the edges of the minimum spanning tree join in 60°. This is not 
+Another observation is that in these local minima, most of the edges of the minimum spanning tree join in 60°. Based on only the first condition, we would expect rhombi with every possible angle to appear; for example, the square would be a local minimum. Thus, to determine the global minima of four terminals where no two terminals overlap, we have to find the global minimum of the rhombi.
 
 
-TODO: 60° are better than the rest, maybe
-\section{Overview of theoretical approaches}
+\subsubsection{Local minima of four terminals}
+
+
+To find the global minimum of the rhombi, without loss of generality let us assume that the rhombi have terminals at $A=(-x;0)$, $B=(0;1)$, $C=(x;0)$ and $D=(0;-1)$ as a function of $x$. Let us restrict the domain to $x\geq1$, as "squishing" the rhombus achieves the same shape "stretching" it, however some calculations do not work when squishing the rhombus. Thus, the length function the Steiner minimal tree in its most simplified form is:
+
+\begin{equation}
+  \label{eq:1}
+  \operatorname{SMT_{rhombus}}(x)=2\sqrt{x^2+\sqrt{3}x+1}
+\end{equation}
+
+The minimum spanning tree is calculated as a piecewise function:
+
+\begin{equation}
+  \label{eq:2}
+  \operatorname{MST_{rhombus}}(x)=  
+  \begin{cases} 
+    2+2\sqrt{x^2+1} & x >\sqrt{3} \\
+    3\sqrt{x^2+1} & \text{otherwise} \\
+  \end{cases}
+\end{equation}
+
+The derivation for both functions is shown in the Appendix. We can define the Steiner ratio function for rhombi as $\operatorname{SR_r}(x) = \frac{\operatorname{SMT_{rhombus}}(x)}{\operatorname{MST_{rhombus}}(x)}$. The singular global minimum of $\operatorname{SR_r}(x)$ is $x=\sqrt{3}$ and $\operatorname{SR_r}(\sqrt{3})=\frac{\sqrt{7}}{3}\approx 0.882$, as depicted in Figure \ref{fig:11}; Figure \ref{fig:12} shows us the actual set of terminals which give rise to the global minimum Steiner ratio.
+
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[scale=0.5]{plot10.png}
+  \end{center}
+  \caption{\label{fig:11} The first few places of $\operatorname{SR_{r}}$.}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[scale=0.5]{plot11.png}
+  \end{center}
+  \caption{\label{fig:12} The set of terminals which produce the global minimum in Figure \ref{fig:11}.}
+\end{figure}
+
+The underlying rhombus which is formed at $\operatorname{SR_r}(x)$ has several other interesting properties and observations, including:
+\begin{itemize}
+  \item It is the breakpoint between the two categories of minimum spanning tree topologies, as defined in the Appendix.
+  \item The terminals form two equilateral triangles which\\share a side, thus all possible edges join in 60°.
+  \item Is (approximately) the same set of terminals as in the lower right corner of Figure \ref{fig:9}.
+  \item The edges of the Steiner tree have a ratio of 1:2:1:2:1, with the longer Steiner tree edges are connected to $A$ and $C$.
+\end{itemize}
+
+\subsubsection{Local minima of n terminals}
+
+\section{Theoretical approaches}
 
 In the literate review, we have seen four different proofs for lower bounds using the same technique - focusing on the cherry. Each proof lists a ``web of conditions'' that the cherry and nearby points must satisfy - which yields a lower bound less than $\frac{\sqrt{3}}{2}$. The problem with this approach is that we are trying to prove that the cherry itself makes the Steiner ratio to be at least $\frac{\sqrt{3}}{2}$, but we cannot prove that the Steiner ratio is more than  $\frac{\sqrt{3}}{2}$, as we can produce set of terminals with Steiner ratio arbitrarily close to $\frac{\sqrt{3}}{2}$ such that the Steiner tree contains a cherry. This means that  these set of conditions can only prove that the Steiner ratio is equal to  $\frac{\sqrt{3}}{2}$, and if there are any assumptions that are not strong enough, then not even the equality can be proven. Therefore, the web of conditions using cherries is unlikely to produce a proof of the conjecture; if we are to prove the conjecture, we need to come up with conditions that apply everywhere. The biggest problem here is that there are no easy-to-state and strong enough global properties that do not have exceptions and corner cases.
 
 
-the need for global properties
+TODO: the need for global properties
 
 \section{Conclusions}
 
@@ -260,4 +316,77 @@ the need for global properties
   \caption{\label{fig:9}10 random points optimized for $\operatorname{SR}(S)$ with SLSQP; $\operatorname{SR}(S)\approx 0.8764$}
 \end{figure}
 
+Alternative phrasing for Conjecture \ref{c:1}:
+
+\begin{conjecture}
+  Let $n$ be the number of terminals and let $S$ be an input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if for every terminal, there exists at least two $\operatorname{MST}(S)$ topologies where the degree of the terminal is different.
+\end{conjecture}
+
+
+\begin{proof} [Derivation for Equation \ref{eq:1}:]
+
+Firstly, we use the construction from provided Karl Bopp \cite{bopp} to find the length of the Simpson line and thus the Steiner minimum tree, where $P_1$ and $P_2$ are the Simpson points of the rhombus:
+\[
+  \operatorname{SMT_{rhombus}}(x) = \operatorname{len}(P_1P_2)
+\]
+This is expanded into:
+\[
+  = \sqrt{(x_{P_1}-x_{P_2})^2+(y_{P_1}-y_{P_2})^2}
+\]
+Without loss of generality, let us assume that the two terminals of the two cherries on the Steiner tree are $A$, $B$ and $C$, $D$ (every Steiner tree of these points have the same length). Therefore, $P_1$ is the point which satisfies $\operatorname{len}(P_1A)=\operatorname{len}(P_1B)=\operatorname{len}(AB)$ and is outside the rhombus, and vice versa for $P_2$ and $C$, $D$. Thus, the coordinates for $P_1$ are:
+\[
+  P_1 = \left(\frac{(-x)^{2} \pm \sqrt{3} (-x)}{2 (-x)}, \pm \frac{\sqrt{3} (-x)}{2} + \frac{1}{2}\right)
+\]
+
+The correct root is:
+
+\[
+  P_1 = \left(\frac{(-x)^{2} - \sqrt{3} (-x)}{2 (-x)}, - \frac{\sqrt{3} (-x)}{2} + \frac{1}{2}\right)
+\]
+
+Similarly, the correct root for $P_2$ is:
+
+\[
+  P_2 =\left(\frac{x^{2} + \sqrt{3} x}{2 x}, - \frac{\sqrt{3} x}{2} - \frac{1}{2}\right)
+\]
+
+If we plug the values of $P_1$ and $P_2$ into $\operatorname{SMT_{rhombus}}(x)$ and simplify the expression, we get:
+\[
+  \operatorname{SMT_{rhombus}}(x)=2\sqrt{x^2+\sqrt(3)x+1}
+\]
+
+% \begin{figure*}[h!]
+%   \begin{center}\[
+%     \sqrt{(\frac{(-x)^{2} - \sqrt{3} (-x)}{2 (-x)}-\frac{x^{2} + \sqrt{3} x}{2 x})^2+(- \frac{\sqrt{3} (-x)}{2} + \frac{1}{2}-(-\frac{\sqrt{3} x}{2} - \frac{1}{2}))^2}
+%   \]
+%   \end{center}
+%   \end{figure*}
+  
+
+  
+  
+\end{proof}
+
+
+\begin{proof} [Derivation for Equation \ref{eq:2}:]
+  For the minimum spanning tree of the rhombus, there are three different categories of topologies which do not have the same length:
+  \begin{itemize}
+    \item Three sides
+    \item Two opposing sides and the $BD$ diagonal
+    \item Two opposing sides and the $AC$ diagonal
+  \end{itemize}
+  Because of our choice to restrict the domain to $[1;\infty]$, the third case can never happen. The formula for a side of the rhombus is $\sqrt{(\pm x-0)^2+(0\mp 1)^2}$, which can be simplified into $\sqrt{x^2+1}$, and the length of the diagonal is 2, thus the formulae for the trees are
+  \begin{itemize}
+    \item $3\sqrt{x^2+1}$
+    \item $2+2\sqrt{x^2+1}$
+  \end{itemize}
+  Now we have to find the solutions for $$3\sqrt{x^2+1} < 2+2\sqrt{x^2+1}$$  to determine the places where the second  category of topologies is better than the first category. The solution is $x<-\sqrt{3}$ or $x>\sqrt{3}$, giving us
+\[
+  \operatorname{MST_{rhombus}}(x)=  
+\begin{cases} 
+  2+2\sqrt{x^2+1} & x >\sqrt{3} \\
+  3\sqrt{x^2+1} & \text{otherwise} \\
+\end{cases}
+\]
+\end{proof}
 \end{document}
