@@ -6,45 +6,45 @@ The style file: abbrv.bst
 Reallocating 'name_of_file' (item size: 1) to 8 items.
 Database file #1: example.bib
 Warning--can't use both author and editor fields in Pettie2008
-You've used 17 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            615 strings with 5914 characters,
-and the built_in function-call counts, 5227 in all, are:
-= -- 523
-> -- 188
+            619 strings with 6046 characters,
+and the built_in function-call counts, 5460 in all, are:
+= -- 543
+> -- 201
 < -- 1
-+ -- 82
-- -- 58
-* -- 377
-:= -- 886
-add.period$ -- 52
-call.type$ -- 17
-change.case$ -- 76
++ -- 87
+- -- 62
+* -- 387
+:= -- 924
+add.period$ -- 54
+call.type$ -- 18
+change.case$ -- 81
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 195
-empty$ -- 438
-format.name$ -- 58
-if$ -- 1089
+cite$ -- 19
+duplicate$ -- 202
+empty$ -- 460
+format.name$ -- 62
+if$ -- 1139
 int.to.chr$ -- 0
-int.to.str$ -- 17
+int.to.str$ -- 18
 missing$ -- 17
-newline$ -- 88
-num.names$ -- 34
-pop$ -- 57
+newline$ -- 92
+num.names$ -- 36
+pop$ -- 67
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 67
 quote$ -- 0
-skip$ -- 133
+skip$ -- 142
 stack$ -- 0
-substring$ -- 405
-swap$ -- 27
+substring$ -- 410
+swap$ -- 28
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 68
 warning$ -- 1
-while$ -- 52
-width$ -- 19
-write$ -- 190
+while$ -- 54
+width$ -- 20
+write$ -- 198
 (There was 1 warning)

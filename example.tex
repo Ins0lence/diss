@@ -1,6 +1,6 @@
 
 \documentclass{mpaper}
-\usepackage{amsthm}
+\usepackage{amsthm, esdiff}
 
 
 \begin{document}
@@ -9,6 +9,7 @@
 \newtheorem{conjecture}{Conjecture}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
+\newtheorem*{remark}{Remark}
 
 \title{The Gilbert-Pollak Conjecture}
 \author{Domonkos Revesz}
@@ -102,7 +103,7 @@ In his PhD thesis, P. O. De Wet \cite{po} criticizes this and related papers wri
 
 % This section will detail the various empirical evidence in support of the conjecture and proposes the first half of a proof that according to empirical results might be able the resolve the conjecture. Firstly, experiments using random graphs and machine learning will demonstrate that the conjecture in the average case usually holds. Then, something
 
-\section{Empirical analysis}
+\section{Empirical analysis} \label{sec:ea}
 
 \begin{figure}
   \begin{center}
@@ -158,13 +159,14 @@ Nevertheless, the measured mean (0.967) is lower than what we would expect based
 
 TODO: Maybe a paragraph about generating in rectangles?
 
-\section{Machine learning}
+\section{Machine learning and real analysis}
 
 
 In the previous section, we looked at the average-case scenarios, however we did not at the worst case (meaning instances where the Steiner ratio is the lowest possible). To find out such instances, we could try to use optimizers to learn more about these instances. Firstly, we define the domain as $n\mathbb{R}^{2}$, where $n$ is the number of terminals, and thus $\{\{x_1, y_1\}, \{x_2, y_2\} \dots \{x_n, y_n\}\}$ are the $x$ and $y$ coordinates of the terminals; let $S=\{s_1, s_2, \dots s_n\}$ denote the associated set of terminals, and then we can define the loss function as $\operatorname{SR}(S)$. To ensure that the loss function can be optimized well, we have to show that it is continuous and differentiable in most places.
 
 \begin{lemma}
-  $\operatorname{SR}$ is continuous at almost all values of the domain for all $n$.
+  \label{l:2}
+  $\operatorname{SR}$ is continuous at almost all values of the domain and differentiable and twice differentiable at some values of the domain for all $n$.
 \end{lemma}
 \begin{proof}
   To prove this statement, we need to prove that both $\operatorname{L_S}$ and $\operatorname{L_M}$ is continuous.
@@ -175,29 +177,32 @@ In the previous section, we looked at the average-case scenarios, however we did
 
   If $s_1$ is not in a breakpoint, then $\operatorname{L_M}$ is continuous in $s_1$ because we are only changing the length of one edge in the minimum spanning tree; if we assume wlog that $s_1$ is connected to $s_2$ and $x_1'$ is the new $x$ coordinate of $s_1$, then the new weight of the minimum spanning tree is
   
-  $$-\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} + \sqrt{(x_1'-x_2)^2 + (y_1-y_2)^2}$$
+  \begin{equation}
+    \label{eq:3}
+  -\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} + \sqrt{(x_1'-x_2)^2 + (y_1-y_2)^2}
+  \end{equation}
 
-  which is a composition of continuous functions and thus is continuous.
+  which is a composition of continuous functions and thus is continuous. Furthermore, this is a composition of differentiable and twice differentiable functions on almost all places, except where $(x_1'-x_2)^2 + (y_1-y_2)^2 =0$ (i.e. where two terminals have the same coordinate). 
 
-  If $s_1$ is in a breakpoint, then it must be both right and left continuous. Wlog let us assume it is not left continuous; meaning the limit of the left topology has a larger limit at $s_1$ than the right topology; this cannot happen, because then we could produce a minimum spanning tree by using the right topology instead of the left topology.
+  If $s_1$ is in a breakpoint, then it must be both right and left continuous. Wlog let us assume it is not left continuous; meaning the limit of the left topology has a larger limit at $s_1$ than the right topology; this cannot happen, because then we could produce a minimum spanning tree by using the right topology instead of the left topology. However, $\operatorname{L_M}$ is not guaranteed to be differentiable at breakpoints.
 
   % because as we are continuously change the coordinate of $S_1$, we only change one edge in the 
 
-  For $\operatorname{L_S}$, we can repeat exactly the same argument.
+  For $\operatorname{L_S}$, we can repeat the same argument.
   % Suppose $\operatorname{L_S}$ is discontinuous at $x_1$, meaning that (using the $\epsilon-\delta$  definition of continuity) there is an $\epsilon$ such that we cannot find a $\delta$ that satisfies the continuity condition. In other words, there exists a terminal $s_1$ such that if we change the $x$ coordinate, $\operatorname{L_S}$ performs a sudden jump. 
 
   % Similar to the breakpoint argument for $\operatorname{L_M}$, this cannot happen because then we could produce a Steiner tree with lower cost on the higher side of the discontinuity by constructing the Steiner tree on the lower side of the discontinuity and treating the terminal  $s_1'$ as a Steiner point and connecting it to the position of the terminal on the higher side. TODO: This is a bit unclear, maybe ask Yiannis.
 
-  Thus, because the quotient of two continuous functions are continuous (expect where the denominator is 0, i.e. the instances where all terminals have the exact same coordinates), the $\operatorname{SR}$ function is continuous.
+  Thus, because the quotient of two continuous functions are continuous (expect where the denominator is 0, i.e. the instances where all terminals have the exact same coordinates), the $\operatorname{SR}$ function is continuous. Moreover, on places where both $\operatorname{L_M}$ and $\operatorname{L_S}$ does not have any overlapping terminals or overlapping terminals and Steiner points and both $\operatorname{L_M}$ and $\operatorname{L_S}$ does not have breakpoints, $\operatorname{SR}$ is differentiable and twice differentiable.
 
   % Suppose there exists a set of points $T$ such that $\operatorname{L_S}(T)$ or $\operatorname{L_M}(T)$ is discontinuous. This means that 
 \end{proof}
 
 \begin{conjecture}
-  $\operatorname{SR}$ is differentiable at almost all values of the domain for every $n$.
+  $\operatorname{SR}$ is differentiable and twice differentiable at almost all values of the domain for every $n$.
 \end{conjecture}
 
-(TODO: maybe prove it? we prove continuity for global minima later, this is not really relevant) 
+% (TODO: maybe prove it? we prove continuity for global minima later, this is not really relevant) 
 
 If this indeed holds, then optimizers should be able to lower the Steiner ratio successfully. Figure \ref{fig:7} demonstrates that some optimizers can indeed be used to find instances with low Steiner ratios; if we accept the conjecture, then they are able to find instances with the global minimum Steiner ratio. Naturally, no instances were found with Steiner ratio less than $\frac{\sqrt{3}}{2}$. (TODO: maybe add more instances and demonstrate this claim?) In the instance of Figure \ref{fig:7}, the optimization process yielded 4 equilateral triangles, however the optimizer can get trapped in local minima, as Figure \ref{fig:8} demonstrates. After repeating the optimization process 100 times with a different set of random points in each run, we get a mean Steiner ratio of 0.870.
 
@@ -223,17 +228,36 @@ As Figure \ref{fig:8} and \ref{fig:9} demonstrates, the optimizer was not able t
 In every exhibited case, the minimum spanning tree is not unique - i.e. it is in a breakpoint. Intuitively, this is because if we slide the terminals along the Steiner tree edge, we change the length of the Steiner edge and thus the weight of the Steiner tree linearly. If we increase the Steiner edge, then we only increase one edge in the minimum spanning tree, and this increase is less than or equal to the increase of the Steiner edge. If we decrease the Steiner edge, then we decrease two edges in the minimum spanning tree, and this decrease is more than or equal to the decrease of the Steiner edge. Figure \ref{fig:10} demonstrates this. Thus, 
 
 \begin{lemma}
-  \label{c:1}
-  Let $n$ be the number of terminals and let $S$ be an input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if for every terminal $s_i$, $i\in\{1,2,\dots n\}$, there exists at least one $M=\operatorname{MST}(S)$ such that $M$ has at least one edge $s_is_m$, $m, k\in \in\{1,2,\dots n\}$ such that we can substitute $s_is_m$ with another edge $s_ks_m$  $m, k\in \in\{1,2,\dots n\}$ to produce $M'$, and the weight of $M$ and $M'$ are equal.
+  \label{l:1}
+  Let $n$ be the number of terminals and let $S$ be an input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if every terminal is in a breakpoint.
 \end{lemma}
+\begin{remark}
+  Let $f'(x)$ denote the derivative of $f(x)$, and let $f'(x^+)$ and $f'(x^-)$ denote the right-hand side and left-hand side derivatives of $f(x)$, respectively.
+
+  Breakpoint here is used in the same sense as in the proof of Lemma \ref{l:2}.
+\end{remark}
 \begin{proof}
   Let $S$ be a set of terminals such that $SR(S)$ is a local minimum; this means that if we fix every coordinate but $x_1$, we get an $\mathbb{R}\rightarrow \mathbb{R}$ function that has a local minimum at $x_1$; let us name this function 
   
   $$\operatorname{SR^1}(x)=\frac{\operatorname{L_S^1}(x)}{\operatorname{L_M^1}(x)}$$
   
-  Without loss of generality, let us assume that the Steiner edge connected to $s_1$ is parallel to the $x$ axis and the Steiner point connected to $s_1$ has a lower $x$ value than $s_1$ (e.g. Steiner point connected to $s_1$ is left of $s_1$); we can do this because length is preserved under rotation. 
+  Without loss of generality, let us assume that the Steiner edge connected to $s_1$ is parallel to the $x$ axis and the Steiner point connected to $s_1$ has a lower $x$ value than $s_1$ (e.g. Steiner point connected to $s_1$ is left of $s_1$); we can do this because length of both trees are preserved under rotation. This way, as we change $x$ from $x_1$, $\operatorname{L_S^1}(x)$ changes by the same amount, i.e. $\operatorname{L_S^1}'(x_1)=1$. Furthermore, it is enough to only examine $x_1$ for the same reasons as detailed in the proof of Lemma \ref{l:2}.
 
-  Because we are in a local minimum, as we increase $x$ from $x_1$ and thus the length of the Steiner edge connected to $s_1$, $\operatorname{SR_1}(x)$ must also increase.
+  Because we are in a local minimum, as we increase $x$ from $x_1$, $\operatorname{SR_1}(x)$ must also increase. This is only the case if the minimum spanning tree increases less than the Steiner ratio is at $x_1$, i.e.
+  \[
+    \operatorname{L_M^1}'(x_1^+)\leq\operatorname{SR^1}(x_1)
+  \]
+  Similarly from the left side:
+  \[
+    \operatorname{L_M^1}'(x_1^-)\geq\operatorname{SR^1}(x_1)
+  \]
+
+  In other words, $\operatorname{L_M^1}'$ must be decreasing at $x_1$. Let us now calculate the first and second derivative of $\operatorname{L_M^1}(x)$ if $x$ is not in a breakpoint using Equation \ref{eq:3} and using $x$ instead of $x_1'$:
+  \begin{eqnarray}
+    \operatorname{L_M^1}'(x) =\dfrac{x-x_2}{\sqrt{\left(x-x_2\right)^2+\left(y_1-y_2\right)^2}}\\
+    \operatorname{L_M^1}''(x) =\dfrac{\left(y_1-y_2\right)^2}{\left(\left(x-x_2\right)^2+\left(y_1-y_2\right)^2\right)^\frac{3}{2}}  
+  \end{eqnarray} 
+  If $x$ is not a breakpoint and the resulting set of terminals does not have any overlaps, then $\operatorname{L_M^1}''(x)\geq 0$; this means that  $\operatorname{L_M^1}'(x)$ is a monotone increasing function. This means that $\operatorname{L_M^1}(x)$ must be in a breakpoint, proving our original statement.
 \end{proof}
 
 \begin{figure}[h!]
@@ -243,11 +267,12 @@ In every exhibited case, the minimum spanning tree is not unique - i.e. it is in
   \caption{\label{fig:10}Visual explanation of local minimum property; as we change $A$ into $A'$ and $A''$, we decrease and increase $\operatorname{L_S}$ by 0.1, however we decrease $\operatorname{L_M}$ by 0.333 and increase it by 0.177, respectively.}
 \end{figure}
 
-Another observation is that in these local minima, most of the edges of the minimum spanning tree join in 60°. Based on only the first condition, we would expect rhombi with every possible angle to appear; for example, the square would be a local minimum. Thus, to determine the global minima of four terminals where no two terminals overlap, we have to find the global minimum of the rhombi.
-
+Another observation is that in these local minima, most of the edges of the minimum spanning tree join in 60°. 
 
 \subsubsection{Local minima of four terminals}
+Figures \ref{fig:7}, \ref{fig:8} and \ref{fig:9} shows us various local minima of the $\operatorname{SR}$ function. Even in these cherry-picked examples, most of the full subcomponents (as defined in \cite{GP1968}) of the Steiner minimum tree are equilateral triangles. This subsection will attempt to explain the relative lack of 4 terminal full subcomponents and the properties of the  quadrilateral full subcomponent appearing in Figure \ref{fig:9}.
 
+Based on only the first condition, we would expect rhombi with every possible angle to appear; for example, the square would be a local minimum. Thus, to determine the global minima of four terminals where no two terminals overlap, we have to find the global minimum of the rhombi.
 
 To find the global minimum of the rhombi, without loss of generality let us assume that the rhombi have terminals at $A=(-x;0)$, $B=(0;1)$, $C=(x;0)$ and $D=(0;-1)$ as a function of $x$. Let us restrict the domain to $x\geq1$, as "squishing" the rhombus achieves the same shape "stretching" it, however some calculations do not work when squishing the rhombus. Thus, the length function the Steiner minimal tree in its most simplified form is:
 
@@ -285,13 +310,54 @@ The derivation for both functions is shown in the Appendix. We can define the St
 
 The underlying rhombus which is formed at $\operatorname{SR_r}(x)$ has several other interesting properties and observations, including:
 \begin{itemize}
-  \item It is the breakpoint between the two categories of minimum spanning tree topologies, as defined in the Appendix.
+  \item It is the breakpoint between the two possible weight-preserving isomorphic classes of spanning tree topologies, as discussed in the Appendix. %This means that we do not need to search for both categories' global minima to find 
   \item The terminals form two equilateral triangles which\\share a side, thus all possible edges join in 60°.
   \item Is (approximately) the same set of terminals as in the lower right corner of Figure \ref{fig:9}.
-  \item The edges of the Steiner tree have a ratio of 1:2:1:2:1, with the longer Steiner tree edges are connected to $A$ and $C$.
+  \item The edges of the Steiner tree have a ratio of 1:2:1:2:1, with the longer Steiner tree edges are connected to $A$ and $C$. 
+  \item Let $p_i$ be the Steiner point incident to terminal $s_i$ ($p_j=p_k$, is possible; $i,j,k \leq 4$), then $\sum\limits_{i=0}^4\overrightarrow{p_is_i}=(0;0)$. This applies to all rhombi.
 \end{itemize}
 
+Nevertheless, there are arrangements of four terminals that have a lower Steiner ratio; however, none of those are local minimum. From now on, let us call the global minimum of the rhombi the  \emph{pure} global minimum of the 4 terminal instances. 
+
+For machine learning, the other rhombi are "false" minima, all the values in the Jacobian matrix of $operatorname{SR}(S)$, where $S$ are the terminals of a rhombus, are 0 and the Hessian matrix is negative\footnote{As possibly interpreted by an optimizer; the application of differentiation is looser for optimizers than as rigidly defined in mathematics.}. This suggests that optimizers that rely solely on Jacobians and Hessians are not suitable for optimizing $operatorname{SR}(S)$.
+
 \subsubsection{Local minima of n terminals}
+We will now move on from 4 terminal instances into higher terminal instances. We do not see any 5 terminal full Steiner tree subcomponents in any of the Figures. If we continue the pattern started with the pure global minimum of the 4 terminal instances, i.e. put down a terminal down such that it forms an equilateral triangle with other two existing terminals\footnote{It does not matter next to which two terminals we put the new terminal; all configurations result in the same minimum spanning tree and Steiner minimum tree, rotated.}, we get the instance displayed in Figure \ref{fig:13}. Because the conjecture is proven for 5 terminals, we know that this must also be the pure global minimum of the 5 terminal instances.
+
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[scale=0.5]{plot12.png}
+  \end{center}
+  \caption{\label{fig:13} The set of terminals which produces the pure global minimum for 5 terminals.}
+\end{figure}
+
+Based on the experimental results from Section \ref{sec:ea}, we also conjecture that
+\begin{conjecture}
+  No 5 terminals which form a full Steiner minimum tree is the pure global minimum of the 5 terminal instances.
+\end{conjecture}
+
+Repeating the same process for 6 terminals, it now matters where we put the new terminal; we can either put it "on top" of the two triangles to form an equilateral triangle with sides double the original side's length, or we can put it to the "side", resulting in a zigzag shape. Putting it to the side results in a much lower Steiner ratio, as Figure \ref{fig:14} shows us. Using the method from \cite{uteshev2021length}, we get that the exact Steiner ratio is $\frac{\sqrt{19}}{5}$. It has analogous properties to the pure global minimum for 4 terminal instances:
+
+\begin{itemize}
+  \item The minimum spanning tree is a breakpoint between multiple weight-preserving isomorphic classes of spanning tree topologies. %This means that we do not need to search for both categories' global minima to find 
+  \item The terminals form four equilateral triangles.
+  \item Is (approximately) the same set of terminals as in the lower half of Figure \ref{fig:8}.
+  \item The edges of the Steiner tree have a ratio of 1:2:3.
+  \item Let $p_i$ be the Steiner point incident to terminal $s_i$ ($p_j=p_k$, is possible; $i,j,k \leq 6$), then $\sum\limits_{i=0}^6\overrightarrow{p_is_i}=(0;0)$. 
+\end{itemize}
+
+
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[scale=0.5]{plot13.png}
+  \end{center}
+  \caption{\label{fig:14} The conjectured set of terminals which produces the pure global minimum for 6 terminals; $\operatorname{SR}(S) = \frac{\sqrt{19}}{5}\approx 0.872$.}
+\end{figure}
+
+
+
+From these
+
 
 \section{Theoretical approaches}
 
@@ -316,12 +382,14 @@ TODO: the need for global properties
   \caption{\label{fig:9}10 random points optimized for $\operatorname{SR}(S)$ with SLSQP; $\operatorname{SR}(S)\approx 0.8764$}
 \end{figure}
 
-Alternative phrasing for Conjecture \ref{c:1}:
+Alternative phrasings for Lemma \ref{l:1}:
 
-\begin{conjecture}
+\begin{lemma}
   Let $n$ be the number of terminals and let $S$ be an input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if for every terminal, there exists at least two $\operatorname{MST}(S)$ topologies where the degree of the terminal is different.
-\end{conjecture}
-
+\end{lemma}
+\begin{lemma}
+  Let $n$ be the number of terminals and let $S$ be an input vector for $\operatorname{SR}$. $\operatorname{SR}(S)$ is a local minimum if for every terminal $s_i$, $i\in\{1,2,\dots n\}$, there exists at least one $M=\operatorname{MST}(S)$ such that $M$ has at least one edge $s_is_m$, $m, k\in \in\{1,2,\dots n\}$ such that we can substitute $s_is_m$ with another edge $s_ks_m$  $m, k\in\{1,2,\dots n\}$ to produce $M'$, and the weight of $M$ and $M'$ are equal.
+\end{lemma}
 
 \begin{proof} [Derivation for Equation \ref{eq:1}:]
 
@@ -369,13 +437,13 @@ If we plug the values of $P_1$ and $P_2$ into $\operatorname{SMT_{rhombus}}(x)$ 
 
 
 \begin{proof} [Derivation for Equation \ref{eq:2}:]
-  For the minimum spanning tree of the rhombus, there are three different categories of topologies which do not have the same length:
+  For the rhombus, for each instance there are three different weight-preserving isomorphic classes of spanning tree topologies:
   \begin{itemize}
     \item Three sides
     \item Two opposing sides and the $BD$ diagonal
     \item Two opposing sides and the $AC$ diagonal
   \end{itemize}
-  Because of our choice to restrict the domain to $[1;\infty]$, the third case can never happen. The formula for a side of the rhombus is $\sqrt{(\pm x-0)^2+(0\mp 1)^2}$, which can be simplified into $\sqrt{x^2+1}$, and the length of the diagonal is 2, thus the formulae for the trees are
+  The smallest weight of these trees is the minimum spanning tree of the rhombus. Because of our choice to restrict the domain to $[1;\infty]$, the third case can never happen. The formula for a side of the rhombus is $\sqrt{(\pm x-0)^2+(0\mp 1)^2}$, which can be simplified into $\sqrt{x^2+1}$, and the length of the diagonal is 2, thus the formulae for the trees are
   \begin{itemize}
     \item $3\sqrt{x^2+1}$
     \item $2+2\sqrt{x^2+1}$
