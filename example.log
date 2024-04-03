@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.1)  31 MAR 2024 00:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.1)  3 APR 2024 01:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -645,34 +645,302 @@ File: plot13.png Graphic file (type png)
 <use plot13.png>
 Package pdftex.def Info: plot13.png  used on input line 352.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
- (example.bbl)
-<plot8764.png, id=247, 395.3169pt x 298.4751pt>
+ (example.bbl [8 <./plot13.png>])
+<plot8764.png, id=266, 395.3169pt x 298.4751pt>
 File: plot8764.png Graphic file (type png)
 <use plot8764.png>
-Package pdftex.def Info: plot8764.png  used on input line 380.
+Package pdftex.def Info: plot8764.png  used on input line 448.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8 <./plot13.png>]
-Overfull \hbox (15.07265pt too wide) in paragraph at lines 403--405
+
+Overfull \hbox (15.07265pt too wide) in paragraph at lines 471--473
 \T1/aer/m/n/9 There-fore, $\OML/cmm/m/it/9 P[]$ \T1/aer/m/n/9 is the point which sat-is-fies $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 P[]A\OT1/cmr/m/n/9 ) = [](\OML/cmm/m/it/9 P[]B\OT1/cmr/m/n/9 ) =
  []
 
+[9 <./plot8764.png>]
+<plot14.png, id=278, 395.3169pt x 298.4751pt>
+File: plot14.png Graphic file (type png)
+<use plot14.png>
+Package pdftex.def Info: plot14.png  used on input line 530.
+(pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
+[leftcolumn badness]: 1000000 on 121.32771pt
+[rightcolumn badness]: 1000000 on 121.32771pt
 - LAST -
-Extra skip:0.0pt
-Left:492.81104pt/8.55011pt
-Right:461.78783pt/0.0pt
-Split: 483.19746pt
-Output:483.19746pt
-Pageshrink: 14.39996pt
-Pagestretch: 28.39996pt
+Extra skip:305.18211pt
+Left:451.53609pt/0.0pt
+Right:144.60802pt/1.74596pt
+Split: 438.82205pt
+Output:438.82205pt
+Pageshrink: 0.0pt
+Pagestretch: 0.0pt
 @colht:666.0pt
-FLUSHEND [output]: 483.19746pt
-FLUSHEND [leftcolumn badness]: 1000000
-FUSHEND [rightcolumn badness]: 60
-[9 <./plot8764.png>] (example.aux)
+FLUSHEND [output]: 438.82205pt
+FLUSHEND [leftcolumn badness]: 81
+FUSHEND [rightcolumn badness]: 10000
+ [10 <./plot14.png>] (example.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -680,17 +948,17 @@ Package rerunfilecheck Info: File `example.out' has not changed.
 (rerunfilecheck)             Checksum: 97FF54EB4F96D54FC1A86C7BDB688F22;3006.
  ) 
 Here is how much of TeX's memory you used:
- 12207 strings out of 475385
- 186638 string characters out of 2786722
- 555652 words of memory out of 3000000
- 33308 multiletter control sequences out of 15000+600000
+ 12231 strings out of 475385
+ 186875 string characters out of 2786722
+ 554891 words of memory out of 3000000
+ 33320 multiletter control sequences out of 15000+600000
  516986 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,14n,91p,1464b,444s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\xdddd\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk>{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on example.pdf (9 pages, 661964 bytes).
+Output written on example.pdf (10 pages, 779185 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
- 212 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
