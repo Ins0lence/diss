@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.1)  9 APR 2024 01:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.11.1)  9 APR 2024 13:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -438,28 +438,28 @@ Package hyperref Info: Link coloring ON on input line 6.
 \c@theorem=\count305
 \c@conjecture=\count306
 \c@definition=\count307
-<CompSci_colour.pdf, id=87, 340.27126pt x 49.18375pt>
+<CompSci_colour.pdf, id=91, 340.27126pt x 49.18375pt>
 File: CompSci_colour.pdf Graphic file (type pdf)
 <use CompSci_colour.pdf>
 Package pdftex.def Info: CompSci_colour.pdf  used on input line 18.
 (pdftex.def)             Requested size: 170.71652pt x 24.67586pt.
 
-Overfull \hbox (4.18126pt too wide) in paragraph at lines 30--31
+Overfull \hbox (4.18126pt too wide) in paragraph at lines 32--33
 \T1/aer/m/n/9 Sci-ence. Ex-am-ples in-clude the min-i-mum span-ning tree, which
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (9.90839pt too wide) in paragraph at lines 39--39
+Overfull \hbox (9.90839pt too wide) in paragraph at lines 44--44
 []\secfnt NOTATION AND PROB-LEM STATE-MENT 
  []
 
@@ -472,130 +472,130 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  <./CompSci_colour.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 58.
+(hyperref)                removing `\<def>-command' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\citeauthoryear' on input line 58.
+(hyperref)                removing `\citeauthoryear' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 58.
+(hyperref)                removing `\<let>-command' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@cite' on input line 58.
+(hyperref)                removing `\@@cite' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 58.
+(hyperref)                removing `\@ifnextchar' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 58.
+(hyperref)                removing `\new@ifnextchar' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 60.
+(hyperref)                removing `\<def>-command' on input line 65.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\citeauthoryear' on input line 60.
+(hyperref)                removing `\citeauthoryear' on input line 65.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 60.
+(hyperref)                removing `\<let>-command' on input line 65.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@cite' on input line 60.
+(hyperref)                removing `\@@cite' on input line 65.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 60.
+(hyperref)                removing `\@ifnextchar' on input line 65.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 60.
+(hyperref)                removing `\new@ifnextchar' on input line 65.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 63.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 68.
 
-LaTeX Font Info:    Trying to load font information for TS1+aer on input line 63.
-LaTeX Font Info:    No file TS1aer.fd. on input line 63.
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 68.
+LaTeX Font Info:    No file TS1aer.fd. on input line 68.
 
 LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textdegree' on input line 63.
+(Font)              for symbol `textdegree' on input line 68.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 63.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 68.
 
 Missing character: There is no ° in font cmr9!
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 95.
+(hyperref)                removing `\<def>-command' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\citeauthoryear' on input line 95.
+(hyperref)                removing `\citeauthoryear' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 95.
+(hyperref)                removing `\<let>-command' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@cite' on input line 95.
+(hyperref)                removing `\@@cite' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 95.
+(hyperref)                removing `\@ifnextchar' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 95.
+(hyperref)                removing `\new@ifnextchar' on input line 100.
 
-<plot2.png, id=151, 416.2752pt x 312.2064pt>
+<plot2.png, id=159, 416.2752pt x 312.2064pt>
 File: plot2.png Graphic file (type png)
 <use plot2.png>
-Package pdftex.def Info: plot2.png  used on input line 110.
+Package pdftex.def Info: plot2.png  used on input line 115.
 (pdftex.def)             Requested size: 208.13708pt x 156.10281pt.
-<plot3.png, id=153, 422.0568pt x 312.2064pt>
+<plot3.png, id=161, 422.0568pt x 312.2064pt>
 File: plot3.png Graphic file (type png)
 <use plot3.png>
-Package pdftex.def Info: plot3.png  used on input line 117.
+Package pdftex.def Info: plot3.png  used on input line 122.
 (pdftex.def)             Requested size: 211.02788pt x 156.10281pt.
-<plot4.png, id=156, 431.4519pt x 312.2064pt>
+<plot4.png, id=164, 431.4519pt x 312.2064pt>
 File: plot4.png Graphic file (type png)
 <use plot4.png>
-Package pdftex.def Info: plot4.png  used on input line 124.
+Package pdftex.def Info: plot4.png  used on input line 129.
 (pdftex.def)             Requested size: 215.72542pt x 156.10281pt.
-<plot1.png, id=157, 412.6617pt x 312.2064pt>
+<plot1.png, id=165, 412.6617pt x 312.2064pt>
 File: plot1.png Graphic file (type png)
 <use plot1.png>
-Package pdftex.def Info: plot1.png  used on input line 133.
+Package pdftex.def Info: plot1.png  used on input line 138.
 (pdftex.def)             Requested size: 206.33034pt x 156.10281pt.
-<plot5.png, id=158, 419.166pt x 312.2064pt>
+<plot5.png, id=166, 419.166pt x 312.2064pt>
 File: plot5.png Graphic file (type png)
 <use plot5.png>
-Package pdftex.def Info: plot5.png  used on input line 140.
+Package pdftex.def Info: plot5.png  used on input line 145.
 (pdftex.def)             Requested size: 209.58249pt x 156.10281pt.
-<plot6.png, id=159, 412.6617pt x 312.2064pt>
+<plot6.png, id=167, 412.6617pt x 312.2064pt>
 File: plot6.png Graphic file (type png)
 <use plot6.png>
-Package pdftex.def Info: plot6.png  used on input line 147.
+Package pdftex.def Info: plot6.png  used on input line 152.
 (pdftex.def)             Requested size: 206.33034pt x 156.10281pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <./plot2.png> <./plot3.png> <./plot4.png>]
-Overfull \hbox (10.53156pt too wide) in paragraph at lines 162--162
+Overfull \hbox (10.53156pt too wide) in paragraph at lines 167--167
 []\secfnt MACHINE LEARN-ING AND REAL ANAL-
  []
 
@@ -603,123 +603,128 @@ Overfull \hbox (10.53156pt too wide) in paragraph at lines 162--162
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4 <./plot1.png> <./plot5.png> <./plot6.png>]
-Overfull \hbox (2.08417pt too wide) in paragraph at lines 207--208
+Overfull \hbox (2.08417pt too wide) in paragraph at lines 212--213
 \T1/aer/m/n/9 Steiner ra-tio. Nat-u-rally, no in-stances were found with Steiner
  []
 
-<plot7.png, id=195, 395.3169pt x 298.4751pt>
+<plot7.png, id=203, 395.3169pt x 298.4751pt>
 File: plot7.png Graphic file (type png)
 <use plot7.png>
-Package pdftex.def Info: plot7.png  used on input line 212.
+Package pdftex.def Info: plot7.png  used on input line 217.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<plot8715.png, id=196, 395.3169pt x 298.4751pt>
+<plot8715.png, id=204, 395.3169pt x 298.4751pt>
 File: plot8715.png Graphic file (type png)
 <use plot8715.png>
-Package pdftex.def Info: plot8715.png  used on input line 219.
+Package pdftex.def Info: plot8715.png  used on input line 224.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [5 <./plot7.png> <./plot8715.png>]
-<plot9.png, id=216, 111.72119pt x 104.74576pt>
+<plot9.png, id=223, 111.72119pt x 104.74576pt>
 File: plot9.png Graphic file (type png)
 <use plot9.png>
-Package pdftex.def Info: plot9.png  used on input line 265.
+Package pdftex.def Info: plot9.png  used on input line 270.
 (pdftex.def)             Requested size: 145.2375pt x 136.16946pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<plot10.png, id=224, 401.8212pt x 298.4751pt>
+<plot10.png, id=231, 401.8212pt x 298.4751pt>
 File: plot10.png Graphic file (type png)
 <use plot10.png>
-Package pdftex.def Info: plot10.png  used on input line 299.
+Package pdftex.def Info: plot10.png  used on input line 304.
 (pdftex.def)             Requested size: 200.9101pt x 149.23718pt.
-<plot11.png, id=225, 395.3169pt x 298.4751pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plot11.png, id=232, 395.3169pt x 298.4751pt>
 File: plot11.png Graphic file (type png)
 <use plot11.png>
-Package pdftex.def Info: plot11.png  used on input line 306.
+Package pdftex.def Info: plot11.png  used on input line 311.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./plot9.png> <./plot10.png>]
-<plot12.png, id=244, 395.3169pt x 298.4751pt>
+[6 <./plot9.png>]
+<plot12.png, id=252, 395.3169pt x 298.4751pt>
 File: plot12.png Graphic file (type png)
 <use plot12.png>
-Package pdftex.def Info: plot12.png  used on input line 329.
+Package pdftex.def Info: plot12.png  used on input line 334.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
-<plot13.png, id=249, 395.3169pt x 298.4751pt>
+ [7 <./plot10.png> <./plot11.png> <./plot12.png>]
+<plot13.png, id=271, 395.3169pt x 298.4751pt>
 File: plot13.png Graphic file (type png)
 <use plot13.png>
-Package pdftex.def Info: plot13.png  used on input line 352.
+Package pdftex.def Info: plot13.png  used on input line 357.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
+ [8 <./plot13.png>]
+<plot15.png, id=297, 403.9893pt x 298.4751pt>
+File: plot15.png Graphic file (type png)
+<use plot15.png>
+Package pdftex.def Info: plot15.png  used on input line 435.
+(pdftex.def)             Requested size: 201.99416pt x 149.23718pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./plot11.png> <./plot12.png>] [8 <./plot13.png>]
-<plot15.png, id=288, 403.9893pt x 298.4751pt>
-File: plot15.png Graphic file (type png)
-<use plot15.png>
-Package pdftex.def Info: plot15.png  used on input line 426.
-(pdftex.def)             Requested size: 201.99416pt x 149.23718pt.
 
-Overfull \hbox (2.77672pt too wide) detected at line 455
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (2.77672pt too wide) detected at line 464
 []\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 S\OT1/cmr/m/n/9 ) = []
  []
 
-(example.bbl [9 <./plot15.png>])
-<plot8764.png, id=300, 395.3169pt x 298.4751pt>
+[9 <./plot15.png>] (example.bbl)
+<plot8764.png, id=308, 395.3169pt x 298.4751pt>
 File: plot8764.png Graphic file (type png)
 <use plot8764.png>
-Package pdftex.def Info: plot8764.png  used on input line 526.
+Package pdftex.def Info: plot8764.png  used on input line 535.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
 
-Overfull \hbox (15.07265pt too wide) in paragraph at lines 549--551
+Overfull \hbox (15.07265pt too wide) in paragraph at lines 558--560
 \T1/aer/m/n/9 There-fore, $\OML/cmm/m/it/9 P[]$ \T1/aer/m/n/9 is the point which sat-is-fies $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 P[]A\OT1/cmr/m/n/9 ) = [](\OML/cmm/m/it/9 P[]B\OT1/cmr/m/n/9 ) =
  []
 
 [10 <./plot8764.png>]
-<plot14.png, id=312, 395.3169pt x 298.4751pt>
+<plot14.png, id=321, 395.3169pt x 298.4751pt>
 File: plot14.png Graphic file (type png)
 <use plot14.png>
-Package pdftex.def Info: plot14.png  used on input line 608.
+Package pdftex.def Info: plot14.png  used on input line 617.
 (pdftex.def)             Requested size: 197.65796pt x 149.23718pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 - LAST -
 Extra skip:0.0pt
-Left:386.99011pt/2.25pt
-Right:392.19632pt/0.0pt
-Split: 389.84322pt
-Output:389.84322pt
-Pageshrink: 3.0pt
-Pagestretch: 11.0pt
+Left:595.86737pt/2.25pt
+Right:604.93346pt/0.0pt
+Split: 600.6504pt
+Output:600.6504pt
+Pageshrink: 7.79999pt
+Pagestretch: 18.79999pt
 @colht:666.0pt
-FLUSHEND [output]: 389.84322pt
+FLUSHEND [output]: 600.6504pt
 FLUSHEND [leftcolumn badness]: 0
-FUSHEND [rightcolumn badness]: 1
- [11 <./plot14.png>] (example.aux)
+FUSHEND [rightcolumn badness]: 3
+[11 <./plot14.png>] (example.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: D88CB8833E7CE0968F66CBE87CFEDEFB;3964.
+(rerunfilecheck)             Checksum: B90D4231A06C0EF3F56A7219F6C70FE3;4090.
  ) 
 Here is how much of TeX's memory you used:
- 12255 strings out of 475385
- 187167 string characters out of 2786722
- 567198 words of memory out of 3000000
- 33333 multiletter control sequences out of 15000+600000
+ 12260 strings out of 475385
+ 187235 string characters out of 2786722
+ 582270 words of memory out of 3000000
+ 33337 multiletter control sequences out of 15000+600000
  516986 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,14n,91p,1464b,444s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 87i,14n,91p,1343b,444s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\xdddd\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk>{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on example.pdf (11 pages, 825637 bytes).
+Output written on example.pdf (11 pages, 828903 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 254 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

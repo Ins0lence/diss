@@ -18,11 +18,13 @@
 \maketitle
 
 \begin{abstract}
-According to Simon Peyton Jones, an abstract should address
-four key questions. First, what is the problem that this
-paper tackles? Second, why is this an interesting problem?
-Third, what is the solution this paper proposes?
-Finally, why is the proposed solution a good one?
+The idea of connecting various points in a network and producing a graph with the lowest possible cost has long been a subject of research in Mathematics and Computer Science. Examples include the minimum spanning tree and the Steiner tree.
+
+% According to Simon Peyton Jones, an abstract should address
+% four key questions. First, what is the problem that this
+% paper tackles? Second, why is this an interesting problem?
+% Third, what is the solution this paper proposes?
+% Finally, why is the proposed solution a good one?
 \end{abstract}
 
 \section{Introduction}
@@ -33,10 +35,13 @@ One can calculate the minimum spanning tree in polynomial time, but the Steiner 
 
  In answering such a question, one has to answer the feasibility and cost of adding new vertices to the graph, the available computing power and the savings in cost that the Steiner tree can offer compared to the minimum spanning tree. The third criteria can be measured by the \emph{Steiner ratio} - the ratio between the minimum spanning tree and the Steiner tree for a given graph. Calculating the Steiner ratio involves calculating both the Steiner tree and the minimum spanning tree, and thus it does not save the expensive Steiner tree calculation. Instead, we can approximate the Steiner ratio by stating infimum and supremum of the Steiner ratio.
  
-The supremum of the Steiner ratio is 1, because the Steiner tree cannot cost more than the minimum spanning tree. However, the infimum is not as obvious; it is different for different types of graphs. For graphs with arbitrary weights, the infimum does not exist - it is possible that all the vertices are connected to a single Steiner point with arbitrarily large absolute value weights with negative signs. If we restrict the weights, for example by embedding the points in an Euclidean plane, we get different infimum Steiner ratios. In 1976, F. K. Hwang \cite{doi:10.1137/0130013} showed that if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their rectilinear distance, then the infimum and minimum Steiner ratio is $\frac{2}{3}$. Gilbert and Pollak conjectured in 1968 \cite{GP1968} if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their Euclidean distance, then the infimum and minimum Steiner ratio is $\frac{\sqrt{3}}{2}$, achieved in the case of an equilateral triangle. Over the years, there have been several attempts made (\cite{doi:10.1073/pnas.87.23.9464}, \cite{myue}) to prove the conjecture, but none of the attempts survived intense scrutiny \cite{Ivanov2012}. This paper proposes two different approaches to this problem and provide discussion on previously used proof techniques.
+The supremum of the Steiner ratio is 1, because the Steiner tree cannot cost more than the minimum spanning tree. However, the infimum is not as obvious; it is different for different types of graphs. For graphs with arbitrary weights, the infimum does not exist - it is possible that all the vertices are connected to a single Steiner point with arbitrarily large absolute value weights with negative signs. If we restrict the weights, for example by embedding the points in an Euclidean plane, we get different infimum Steiner ratios. In 1976, F. K. Hwang \cite{doi:10.1137/0130013} showed that if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their rectilinear distance, then the infimum and minimum Steiner ratio is $\frac{2}{3}$. Gilbert and Pollak conjectured in 1968 \cite{GP1968} if the vertices are embedded in an Euclidean plane and the weights between the vertices correspond to their Euclidean distance, then the infimum and minimum Steiner ratio is $\frac{\sqrt{3}}{2}$, achieved in the case of an equilateral triangle. Over the years, there have been several attempts made (\cite{doi:10.1073/pnas.87.23.9464}, \cite{myue}) to prove the conjecture, but none of the attempts survived intense scrutiny \cite{Ivanov2012}. 
+
+This paper proposes several approaches to this problem and provide discussion on previously used proof techniques. In Section \ref{sec:not}, we introduce the notation of the paper and the central problem. In Section \ref{sec:bg}, we provide a historical overview of the problem and introduce some well-known properties of the underlying objects.
+In Section \ref{sec:ea}, we perform experiments and empirical evaluations to verify the Conjecture's validity. In Section \ref{sec:mla}, we perform further experiments using optimizers to further verify the Conjecture, and propose a way of solving. Finally, in Section \ref{sec:other}, we discuss other properties and approaches that might be useful for attacking the Conjecture.
 
 
-\section{Notation and problem statement}
+\section{Notation and problem statement}\label{sec:not}
 
 Let $S$ be a set of points, also called \emph{terminals}, in a Euclidean plane, i.e. each member of $S$ is a tuple $(x,y)$ where $x,y\in\mathbb{R}$. Let us define the weighted graph $G$, where the vertices of $G$ correspond to $S$, $G$ is complete graph, and the weight of edge $e$ between vertices $A$ and $B$ is defined as $w(e)=\operatorname{len}(e)$, where $len(e) = \sqrt{(x_A-x_B)^2+(y_A-y_B)^2}$. Furthermore, let us define $\operatorname{MST}(S)$ the minimum spanning tree of $G$. For the Steiner tree, we permitted to place at any coordinates; similarly to the terminals, each Steiner point must be connected to the rest of the points in $G$, including terminals and other Steiner points, and weights are defined the same way. Let us define $\operatorname{SMT}(S)$ to be the smallest cost Steiner tree of $G$. 
 % By the \emph{topology} of $\operatorname{MST}(S)$ and . 
@@ -48,7 +53,7 @@ Finally, let us define \emph{cherry} as a Steiner point connected to at least tw
 % \paragraph*{}
 
 
-\section{History of the problem}
+\section{History of the problem}\label{sec:bg}
 \subsection{Pre-Modern history}
 
 The history of the conjecture stretches to back Fermat and Torricelli \cite{Brazil2014}, with only the special case of three points considered originally. Later, the generalized Fermat-Torricelli problem considered the case of $n$ points connected to a single point $S$ such that the sum of the sum of the length of the edges are minimized. The Euclidean Steiner tree problem was originally proposed and discussed by  the French mathematician Joseph Gergonne in 1810. Gergonne also proposed a general algorithm for finding the Steiner tree for $n$ points, which was later rediscovered by Melzak. This set forth a pattern of amnesia; the problem was subsequently discussed in various capacity by Gauss and Schumacher, who inspired two German mathematicians to investigate the problem restricted to four vertices, and was investigated by Czech mathematicians Jarník and Kössler and separately by the French mathematician Gustave Choquet; all of these groups seem to have been unaware of each other.
@@ -319,7 +324,7 @@ The underlying rhombus which is formed at $\operatorname{SR_r}(x)$ has several o
 
 Nevertheless, there are arrangements of four terminals that have a lower Steiner ratio; however, none of those are local minimum. From now on, let us call the global minimum of the rhombi the  \emph{pure} global minimum of the 4 terminal instances. 
 
-For machine learning, the other rhombi are "false" minima, all the values in the Jacobian matrix of $operatorname{SR}(S)$, where $S$ are the terminals of a rhombus, are 0 and the Hessian matrix is negative\footnote{As possibly interpreted by an optimizer; the application of differentiation is looser for optimizers than as rigidly defined in mathematics.}. This suggests that optimizers that rely solely on Jacobians and Hessians are not suitable for optimizing $\operatorname{SR}(S)$.
+For machine learning, the other rhombi are "false" minima, all the values in the Jacobian matrix of $\operatorname{SR}(S)$, where $S$ are the terminals of a rhombus, are 0 and the Hessian matrix is negative\footnote{As possibly interpreted by an optimizer; the application of differentiation is looser for optimizers than as rigidly defined in mathematics.}. This suggests that optimizers that rely solely on Jacobians and Hessians are not suitable for optimizing $\operatorname{SR}(S)$.
 
 \subsubsection{Pure global minima of n terminals}
 We will now move on from 4 terminal instances into higher terminal instances. We do not see any 5 terminal full Steiner tree subcomponents in any of the Figures. If we continue the pattern started with the pure global minimum of the 4 terminal instances, i.e. put down a terminal down such that it forms an equilateral triangle with other two existing terminals\footnote{It does not matter next to which two terminals we put the new terminal; all configurations result in the same minimum spanning tree and Steiner minimum tree, rotated.}, we get the instance displayed in Figure \ref{fig:13}. Because the conjecture is proven for 5 terminals, we know that this must also be the pure global minimum of the 5 terminal instances; the same argument can be repeated for 7 terminals.
@@ -407,15 +412,19 @@ As we have seen in Section \ref{sec:rhombus}, the condition in Lemma \ref{l:1} i
 \end{enumerate}
 If Properties 1 and 2 are indeed satisfactory, then Property 3 is also satisfactory and the Gilbert-Pollak conjecture holds.
 
-\section{Other approaches}
+\section{Other approaches} \label{sec:other}
 In this section, we will discuss the limitations of a proof technique used to prove lower bounds for the Gilbert-Pollak conjecture and other possible lines of attacks and observations that suggest that the conjecture holds. 
 \subsection{Limitations of cherry proofs}
 
-In the literate review, we have seen four different proofs for lower bounds using the same technique - focusing on the cherry. Each proof lists a ``web of conditions'' that the cherry and nearby points must satisfy - which yields a lower bound less than $\frac{\sqrt{3}}{2}$. The problem with this approach is that we are trying to prove that the cherry itself makes the Steiner ratio to be at least $\frac{\sqrt{3}}{2}$, but we cannot prove that the Steiner ratio is more than  $\frac{\sqrt{3}}{2}$, as we can produce set of terminals with Steiner ratio arbitrarily close to $\frac{\sqrt{3}}{2}$ such that the Steiner tree contains a cherry. This means that  these set of conditions can only prove that the Steiner ratio is equal to  $\frac{\sqrt{3}}{2}$, and if there are any assumptions that are not strong enough, then not even the equality can be proven. Therefore, the web of conditions using cherries is unlikely to produce a proof of the conjecture; if we are to prove the conjecture, we need to come up with conditions that apply everywhere. The biggest problem here is that there are no easy-to-state and strong enough global properties that do not have exceptions and corner cases.
+In the literature review, we have seen four different proofs for lower bounds using the same technique - focusing on the cherry. Each proof lists a ``web of conditions'' that the cherry and nearby points must satisfy - which yields a lower bound less than $\frac{\sqrt{3}}{2}$. The problem with this approach is that we are trying to prove that the cherry itself makes the Steiner ratio to be at least $\frac{\sqrt{3}}{2}$, but we cannot prove that the Steiner ratio is more than  $\frac{\sqrt{3}}{2}$, as we can produce set of terminals with Steiner ratio arbitrarily close to $\frac{\sqrt{3}}{2}$ such that the Steiner tree contains a cherry. This means that  these set of conditions can only prove that the Steiner ratio is equal to  $\frac{\sqrt{3}}{2}$, and if there are any assumptions that are not strong enough, then not even the equality can be proven. Therefore, the web of conditions using cherries is unlikely to produce a proof of the conjecture; if we are to prove the conjecture, we need to come up with conditions that apply everywhere. The biggest problem here is that there are no easy-to-state and strong enough global properties that do not have exceptions and corner cases.
 
+\subsubsection{n-cherries}
+As we have seen, cherries are not strong enough to prove the Conjecture because they do not constrain the Steiner minimum tree enough. However, cherries do not exist in a vacuum; if we replace all terminals of all cherries in $\operatorname{SMT}(S)$, $S$ being a set of terminals, with their connecting Steiner points, then the resulting Steiner tree $\operatorname{SMT}(S')$ must also have at least two cherries; let us call this process "joining". Formalizing this, let us call a terminal a 0-cherry, and a conventional cherry a strict 1-cherry. Then, a non-strict 1-cherry can be either a 0-cherry or a 1-cherry, and a strict 2-cherry is a strict 1-cherry and a non-strict 1-cherry joined together. Again, the non-strict 2-cherry can be a 0, 1 or a strict 2-cherry; this pattern goes on ad infinitum. The meaning behind the $n$-cherry is that all the terminals of the $n$-cherry disappears after $n$ joins (except for the 0-cherry, although we could consider that the terminals of the 0-cherries have already disappeared). We can do this process until we arrive at a three terminal set; since there are multiple correct ways of joining on a three terminal set, we choose not to define joining for three terminal set.
+
+Thus, we can build any Steiner tree by connecting two $n$-cherries to produce an $n+1$-cherry. This yields itself to a total induction proof, where we assume that all $n$-cherries have Steiner ratios greater than $\frac{\sqrt{3}}{2}$, and we try to prove that connecting them retains this lower bound. Nevertheless, $n$-cherries might also be used with conjunction with the web of conditions used in the classic cherry proofs to prove the Conjecture, since it is stronger than simple  cherries.
 % \subsection{Properties of Steiner minimal trees}
 
-\subsection{Another way of generating Steiner tree}
+\subsection{Another way of generating Steiner trees}
 As we have seen in Section \ref{sec:ea}, randomly generating terminals on a plane is not likely to yield low Steiner ratio instances. Perhaps the way we generated the terminals was the issue, and we might be able to find a counterexample to the conjecture if generate the terminals differently.
 
 
@@ -428,8 +437,8 @@ Let us build a set of $n$ terminals by selecting a full Steiner tree topology by
   \caption{\label{fig:17} A randomly generated hexagonal tree with the leafs treated as terminals and the associated minimum spanning tree. Each edge's length was generated in $[0;1]$. The ratio between the length of these two objects is $1.512$.}
 \end{figure}
 
-\subsection{High Steiner ratio instances}
-In Section \ref{sec:mla}, we have explored and discussed properties of instances with minimal Steiner ratios. Another way to approach the conjecture is to identify the reasons other instances have higher Steiner ratios.
+\subsection{Angles and the Steiner ratio}
+% In Section \ref{sec:mla}, we have explored and discussed properties of instances with minimal Steiner ratios. Another way to approach the conjecture is to identify the reasons other instances have higher Steiner ratios.
 
 As we have seen in Figure \ref{fig:10}, moving a terminal of an equilateral triangle increases the Steiner ratio, but it also increases the maximum angle in the minimum spanning tree. It is well known that if the largest angle in a triangle is over 120°, then the minimum spanning tree and the Steiner minimum tree is equivalent, however no  continuous connection is established between the angles and the Steiner ratio.
 
@@ -461,12 +470,11 @@ Let us consider this for the case of triangles by
   Where $t=\operatorname{len}(s_1s_2)$. The roots of this function are $\frac{2\pi}{3}+n\pi, n\in\mathbb{Z}$; this meant there are no roots in the $[\frac{\pi}{3};\frac{2\pi}{3})$ interval. Furthermore, the denominator ispositive (or not in domain) at every value of the domain, and the numerator is positive on the interval $(\frac{\pi}{3};\frac{2\pi}{3})$, and thus the whole expression is negative on $(\frac{\pi}{3};\frac{2\pi}{3})$. This means that $\operatorname{L_S}(S)$ achieves its lowest possible value when the maximum angle is minimized, proving our original statement. 
 \end{proof}
 
-If this generalizes to all number of terminals, then we have proven the Conjecture, because the only way to minimize the largest possible angle is to make every angle $\frac{\pi}{3}$, which would result in all terminals lying on a triangular lattice. Nevertheless, this also partly explains the relatively poor performance of the Steiner minimum tree in Section \ref{sec:ea}; the largest angle is rarely even close to $\frac{\pi}{3}$, therefore even if there is a Steiner minimum tree not equivalent to the minimum spanning tree, it is not likely to save a lot.
+If this generalizes to all number of terminals, then we have proven the Conjecture, because the only way to minimize the largest possible angle is to make every angle $\frac{\pi}{3}$, which would result in all terminals lying on a triangular lattice. Nevertheless, this also partly explains the relatively poor performance of the Steiner minimum tree in Section \ref{sec:ea}; the largest angle is rarely even close to $\frac{\pi}{3}$, therefore even if there is a Steiner minimum tree not equivalent to the minimum spanning tree, it is not likely to save a lot. Moreover, a random sample of 100000 triangles (generated the same way as in Section \ref{sec:ea}) had a mean largest angle of $0.638\pi$, collaborating our results.
 %  i.e. if
 % \begin{conjecture}
 %   Let $S$ and $S'$ be a set of terminals with the same cardinality, allowing no overlapping terminals inside the sets. If the largest angle between any two possible edges with a common terminal in $\operatorname{MST(S')}$ is larger than or equal to the same concept in $\operatorname{MST(S)}$, then $\operatorname{SR}(S)\leq\operatorname{SR}(S')$.
 % \end{conjecture}
-holds, then 
 % \begin{lemma}
 %   Let $S=\{s_1, s_2, s_3\}$ and $S'=\{s_4, s_5, s_6\}$, $s_n=\{x_n, y_n\}$ be set of terminals, such that  $\measuredangle s_1s_2s_3$ and $\measuredangle s_4s_5s_6$ are the largest angles in the triangles formed by $S$ and $S'$, and $\measuredangle s_2s_1s_3$ and $\measuredangle s_5s_4s_6$ are the second-largest angles in the triangles formed by $S$ and $S'$. If
 %   % $s_1s_2$,  $s_2, s_3$, $s_4, s_5$ and $s_5, s_6$ are all in $\operatorname{MST}(S)$ and $\operatorname{MST}(S')$ as edges,
@@ -511,6 +519,7 @@ holds, then
 
 
 % TODO: the need for global properties
+
 
 \section{Conclusions}
 
