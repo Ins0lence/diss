@@ -159,7 +159,7 @@ Nevertheless, the measured mean (0.967) is lower than what we would expect based
 
 TODO: Maybe a paragraph about generating in rectangles?
 
-\section{Machine learning and real analysis}
+\section{Machine learning and real analysis}\label{sec:mla}
 
 
 In the previous section, we looked at the average-case scenarios, however we did not at the worst case (meaning instances where the Steiner ratio is the lowest possible). To find out such instances, we could try to use optimizers to learn more about these instances. Firstly, we define the domain as $n\mathbb{R}^{2}$, where $n$ is the number of terminals, and thus $\{\{x_1, y_1\}, \{x_2, y_2\} \dots \{x_n, y_n\}\}$ are the $x$ and $y$ coordinates of the terminals; let $S=\{s_1, s_2, \dots s_n\}$ denote the associated set of terminals, and then we can define the loss function as $\operatorname{SR}(S)$. To ensure that the loss function can be optimized well, we have to show that it is continuous and differentiable in most places.
@@ -207,14 +207,14 @@ In the previous section, we looked at the average-case scenarios, however we did
 If this indeed holds, then optimizers should be able to lower the Steiner ratio successfully. Figure \ref{fig:7} demonstrates that some optimizers can indeed be used to find instances with low Steiner ratios; if we accept the conjecture, then they are able to find instances with the global minimum Steiner ratio. Naturally, no instances were found with Steiner ratio less than $\frac{\sqrt{3}}{2}$. (TODO: maybe add more instances and demonstrate this claim?) In the instance of Figure \ref{fig:7}, the optimization process yielded 4 equilateral triangles, however the optimizer can get trapped in local minima, as Figure \ref{fig:8} demonstrates. After repeating the optimization process 100 times with a different set of random points in each run, we get a mean Steiner ratio of 0.870.
 
 
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
   \includegraphics[scale=0.5]{plot7.png}
   \end{center}
   \caption{\label{fig:7}10 random points optimized for $\operatorname{SR}(S)$ with SLSQP; $\operatorname{SR}(S)=0.866\dots\approx\frac{\sqrt{3}}{2}$}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
   \includegraphics[scale=0.5]{plot8715.png}
   \end{center}
@@ -269,7 +269,7 @@ In every exhibited case, the minimum spanning tree is not unique - i.e. it is in
 
 Another observation is that in these local minima, most of the edges of the minimum spanning tree join in 60°. 
 
-\subsubsection{Local minima of four terminals}
+\subsubsection{Local minima of four terminals}\label{sec:rhombus}
 Figures \ref{fig:7}, \ref{fig:8} and \ref{fig:9} shows us various local minima of the $\operatorname{SR}$ function. Even in these cherry-picked examples, most of the full subcomponents (as defined in \cite{GP1968}) of the Steiner minimum tree are equilateral triangles. This subsection will attempt to explain the relative lack of 4 terminal full subcomponents and the properties of the  quadrilateral full subcomponent appearing in Figure \ref{fig:9}.
 
 Based on only the first condition, we would expect rhombi with every possible angle to appear; for example, the square would be a local minimum. Thus, to determine the global minima of four terminals where no two terminals overlap, we have to find the global minimum of the rhombi.
@@ -321,7 +321,7 @@ Nevertheless, there are arrangements of four terminals that have a lower Steiner
 
 For machine learning, the other rhombi are "false" minima, all the values in the Jacobian matrix of $operatorname{SR}(S)$, where $S$ are the terminals of a rhombus, are 0 and the Hessian matrix is negative\footnote{As possibly interpreted by an optimizer; the application of differentiation is looser for optimizers than as rigidly defined in mathematics.}. This suggests that optimizers that rely solely on Jacobians and Hessians are not suitable for optimizing $\operatorname{SR}(S)$.
 
-\subsubsection{Local minima of n terminals}
+\subsubsection{Pure global minima of n terminals}
 We will now move on from 4 terminal instances into higher terminal instances. We do not see any 5 terminal full Steiner tree subcomponents in any of the Figures. If we continue the pattern started with the pure global minimum of the 4 terminal instances, i.e. put down a terminal down such that it forms an equilateral triangle with other two existing terminals\footnote{It does not matter next to which two terminals we put the new terminal; all configurations result in the same minimum spanning tree and Steiner minimum tree, rotated.}, we get the instance displayed in Figure \ref{fig:13}. Because the conjecture is proven for 5 terminals, we know that this must also be the pure global minimum of the 5 terminal instances; the same argument can be repeated for 7 terminals.
 
 \begin{figure}[h!]
@@ -396,43 +396,121 @@ Secondly, we conjecture that:
   $T_n$ is the pure global minimum for $n$ terminals.
 \end{conjecture}
 
-For $n=3,4,5,7$ this is proven. The empirical evidence behind this is the fact that the only full Steiner subcomponents in the optimizer results are $T_n$ full subcomponents. Admittedly, only a few experiments with 10 terminals are presented; however, most of the optimizer results are similar to the ones presented, and optimizations runs for even 20 terminals take minutes to execute and a large portion of the experiments are not successful (meaning the iteration limit is reached or problems with numerical precision). Furthermore, if this conjecture holds, then we have proven the Gilbert-Pollak conjecture. 
+For $n=3,4,5,7$ this is proven. The empirical evidence behind this is the fact that the only full Steiner subcomponents in the optimizer results are $T_n$ full subcomponents. Furthermore, experiments show when the input is $T_n$ for the optimizer, the output is the same as the input, barring any numerical errors. Admittedly, only a few experiments with 10 terminals are presented; however, most of the optimizer results are similar to the ones presented, and optimizations runs for even 20 terminals take minutes to execute and a large portion of the experiments are not successful (meaning the iteration limit is reached or problems with numerical precision). Furthermore, if this conjecture holds, then we have proven the Gilbert-Pollak conjecture.
 
+\subsection{Other possible properties of local minima}
+As we have seen in Section \ref{sec:rhombus}, the condition in Lemma \ref{l:1} is necessary, but not satisfactory; it is satisfactory for every value of the Jacobian matrix being 0. There are other qualities that might be satisfactory for local minima with full Steiner trees as we observed from the example of the rhombus, including:
+\begin{enumerate}
+  \item All edges must have another edge such that the two edges meet in 60°;
+  \item All terminals must be on a triangular lattice;
+  \item It must be on a breakpoint of multiple weight-pre- serving isomorphic classes of spanning tree topologies, and for $n\geq5$, it must be on a breakpoint of multiple non-eight-preserving isomorphic classes of spanning tree topologies.
+\end{enumerate}
+If Properties 1 and 2 are indeed satisfactory, then Property 3 is also satisfactory and the Gilbert-Pollak conjecture holds.
 
-
-% \operatorname{L_S}(T_{2k}) = \left|{\frac{3}{2} k + \frac{\sqrt{3}}{2} i k - 1}\right|
-
-
-% TODO: remark maybe?
-% \begin{proof}
-%   Let us prove this by contradiction; for $2k=4$, we already proved that this is the Steiner minimum tree topology, so we will only be considering the cases $k\geq 3$.
-
-%   Firstly, let us suppose that $\operatorname{SMT}(T_{2k})$ has a cherry that contains any terminals not included in $\{s_0, s_1, s_{2k-2}, s_{2k-1}\}$; let us denote the two terminal of the cherry $s_m$ and $s_u$. $\operatorname{len}(s_m, s_u) = 1$, because otherwise the lunes would overlap with one of the terminals. TODO: expand this
-% \end{proof}
-
-% \begin{lemma}[]
-%   % For $T_{2k}$, $k\in\mathbb{Z}, k\geq 2$ let the $C_{2k}$ be the Steiner tree topology, where  $s_0$ and $s_1$, and $s_{2k-2}$ and $s_{2k-1}$, respectively, are on cherries and all other terminals 
-%   For $T_{2k}$, $k\in\mathbb{Z}, k\geq 2$, let $p_l$ be the Steiner point incident to terminal $s_l$, then 
-%   \begin{itemize}
-%     \item $\measuredangle(\overrightarrow{p_0s_0}, \overrightarrow{p_{2k-1}s_{2k-1}})=\pi$;
-%     \item $\measuredangle(\overrightarrow{p_0s_0}, \overrightarrow{p_{2l-1}s_{2l-1}})=\frac{2\pi}{3}, l\in\mathbb{Z}, 0\leq l\leq k-1$;
-%     \item $\measuredangle(\overrightarrow{p_0s_0}, \overrightarrow{p_{2l}s_{2l}})=\frac{5\pi}{3}, l\in\mathbb{Z}, 1\leq l\leq k$.
-%   \end{itemize}
-% \end{lemma}
-% TODO: visual explanation?
-% \begin{proof}
-%   Let us prove using total induction.
-%   % vertical cherries are easy to handle
-%   % horizontal cherries 
-% \end{proof}
-% The Steiner minimal trees depicted in Figures \ref{fig:12}, \ref{fig:14} and \ref{fig:15} all satisfy these conditions 
-
-\section{Theoretical approaches}
+\section{Other approaches}
+In this section, we will discuss the limitations of a proof technique used to prove lower bounds for the Gilbert-Pollak conjecture and other possible lines of attacks and observations that suggest that the conjecture holds. 
+\subsection{Limitations of cherry proofs}
 
 In the literate review, we have seen four different proofs for lower bounds using the same technique - focusing on the cherry. Each proof lists a ``web of conditions'' that the cherry and nearby points must satisfy - which yields a lower bound less than $\frac{\sqrt{3}}{2}$. The problem with this approach is that we are trying to prove that the cherry itself makes the Steiner ratio to be at least $\frac{\sqrt{3}}{2}$, but we cannot prove that the Steiner ratio is more than  $\frac{\sqrt{3}}{2}$, as we can produce set of terminals with Steiner ratio arbitrarily close to $\frac{\sqrt{3}}{2}$ such that the Steiner tree contains a cherry. This means that  these set of conditions can only prove that the Steiner ratio is equal to  $\frac{\sqrt{3}}{2}$, and if there are any assumptions that are not strong enough, then not even the equality can be proven. Therefore, the web of conditions using cherries is unlikely to produce a proof of the conjecture; if we are to prove the conjecture, we need to come up with conditions that apply everywhere. The biggest problem here is that there are no easy-to-state and strong enough global properties that do not have exceptions and corner cases.
 
+% \subsection{Properties of Steiner minimal trees}
 
-TODO: the need for global properties
+\subsection{Another way of generating Steiner tree}
+As we have seen in Section \ref{sec:ea}, randomly generating terminals on a plane is not likely to yield low Steiner ratio instances. Perhaps the way we generated the terminals was the issue, and we might be able to find a counterexample to the conjecture if generate the terminals differently.
+
+
+Let us build a set of $n$ terminals by selecting a full Steiner tree topology by selecting a hexagonal tree and selecting edge lengths. Figure \ref{fig:17} shows a randomly generated instance of this on 10 terminals; ratio between the length of the hexagonal tree and the minimum spanning tree is $1.512$- This means that the hexagonal tree is actually longer the minimum spanning tree. This is not an isolated incident - this experiment was repeated 1000 more times, and the minimum ratio was $1.084$. Needless to say, this way of generating set of terminals and Steiner trees also does not yield low Steiner ratio instances.
+
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[scale=0.5]{plot15.png}
+  \end{center}
+  \caption{\label{fig:17} A randomly generated hexagonal tree with the leafs treated as terminals and the associated minimum spanning tree. Each edge's length was generated in $[0;1]$. The ratio between the length of these two objects is $1.512$.}
+\end{figure}
+
+\subsection{High Steiner ratio instances}
+In Section \ref{sec:mla}, we have explored and discussed properties of instances with minimal Steiner ratios. Another way to approach the conjecture is to identify the reasons other instances have higher Steiner ratios.
+
+As we have seen in Figure \ref{fig:10}, moving a terminal of an equilateral triangle increases the Steiner ratio, but it also increases the maximum angle in the minimum spanning tree. It is well known that if the largest angle in a triangle is over 120°, then the minimum spanning tree and the Steiner minimum tree is equivalent, however no  continuous connection is established between the angles and the Steiner ratio.
+
+Let us consider this for the case of triangles by 
+\begin{lemma}
+  Let $S=\{s_1, s_2, s_3\}$ and $S'=\{s_4, s_5, s_6\}$, $s_n=\{x_n, y_n\}$ be set of terminals, such that  $\alpha=\measuredangle s_1s_2s_3$ and $\alpha'=\measuredangle s_4s_5s_6$ are the largest angles in the triangles formed by $S$.
+  % and $S'$, and $\measuredangle s_2s_1s_3$ and $\measuredangle s_5s_4s_6$ are the second-largest angles in the triangles formed by $S$ and $S'$.
+   If
+  $\alpha\allowbreak\leq\alpha'$,
+  and $\allowbreak\frac{\operatorname{len}(s_1s_2)}{\operatorname{len}(s_2s_3)}\allowbreak=\allowbreak\frac{\operatorname{len}(s_4s_5)}{\operatorname{len}(s_5s_6)}$,
+   then $\operatorname{SR}(S) \allowbreak\leq\allowbreak \operatorname{SR}(S')$.
+\end{lemma}
+\begin{proof}
+  As per the triangle inequalities, the largest side in $S$ and $S'$ is $s_1s_3$ and $s_4s_6$, and thus $\operatorname{L_M}(S)=\operatorname{len}(s_1s_2)+\operatorname{len}(s_2s_3)$ and $\operatorname{L_M}(S')=\operatorname{len}(s_4s_5)+\operatorname{len}(s_5s_6)$. Furthermore, we know $\alpha\geq\frac{\pi}{3}$, because otherwise it could not be the largest angle in the triangle.
+
+  If $\alpha\geq\frac{2\pi}{3}$, then $\operatorname{SR}(S)=\operatorname{SR}(S')=1$. In all other cases, without loss of generality, let us assume that $s_2$ and $s_5$ has the coordinates $(0; 0)$, and $s_3$ and $s_6$ has the coordinates $(1;0)$; then, the Simpson point of $s_1$, $s_3$ and $s_5s_6$ lies on $(\frac{1}{2}, -\frac{\sqrt{3}}{2})$. Then, the length of the Simpson line and thus the $\operatorname{SMT}$ of $S$ is
+  \[
+    \operatorname{L_S}(S) = \sqrt{(\cos\alpha\operatorname{len}(s_1s_2)+\frac{1}{2})^2+(\sin\alpha\operatorname{len}(s_1s_2)-\frac{\sqrt{3}}{2})^2}
+  \]
+  Similarly, for $S'$ it is
+  \[
+    \operatorname{L_S}(S) = \sqrt{(\cos\alpha'\operatorname{len}(s_1s_2)+\frac{1}{2})^2+(\sin\alpha'\operatorname{len}(s_1s_2)-\frac{\sqrt{3}}{2})^2}
+  \]
+  Here, we can substitute $\operatorname{len}(s_4s_5)$ with $\operatorname{len}(s_1s_2)$, because we assumed $s_2s_3$ and $s_5s_6$ to be the same size. The derivative of $L_S$ with respect to $\alpha$ is:
+
+  \[
+    \operatorname{L_S}(S)' = -\dfrac{t\cdot\left(\sin\left({\alpha}\right)+\sqrt{3}\cos\left({\alpha}\right)\right)}{2\sqrt{1-t\cdot\left(\sqrt{3}\sin\left({\alpha}\right)-\cos\left({\alpha}\right)-t\right)}}
+  \]
+  Where $t=\operatorname{len}(s_1s_2)$. The roots of this function are $\frac{2\pi}{3}+n\pi, n\in\mathbb{Z}$; this meant there are no roots in the $[\frac{\pi}{3};\frac{2\pi}{3})$ interval. Furthermore, the denominator ispositive (or not in domain) at every value of the domain, and the numerator is positive on the interval $(\frac{\pi}{3};\frac{2\pi}{3})$, and thus the whole expression is negative on $(\frac{\pi}{3};\frac{2\pi}{3})$. This means that $\operatorname{L_S}(S)$ achieves its lowest possible value when the maximum angle is minimized, proving our original statement. 
+\end{proof}
+
+If this generalizes to all number of terminals, then we have proven the Conjecture, because the only way to minimize the largest possible angle is to make every angle $\frac{\pi}{3}$, which would result in all terminals lying on a triangular lattice. Nevertheless, this also partly explains the relatively poor performance of the Steiner minimum tree in Section \ref{sec:ea}; the largest angle is rarely even close to $\frac{\pi}{3}$, therefore even if there is a Steiner minimum tree not equivalent to the minimum spanning tree, it is not likely to save a lot.
+%  i.e. if
+% \begin{conjecture}
+%   Let $S$ and $S'$ be a set of terminals with the same cardinality, allowing no overlapping terminals inside the sets. If the largest angle between any two possible edges with a common terminal in $\operatorname{MST(S')}$ is larger than or equal to the same concept in $\operatorname{MST(S)}$, then $\operatorname{SR}(S)\leq\operatorname{SR}(S')$.
+% \end{conjecture}
+holds, then 
+% \begin{lemma}
+%   Let $S=\{s_1, s_2, s_3\}$ and $S'=\{s_4, s_5, s_6\}$, $s_n=\{x_n, y_n\}$ be set of terminals, such that  $\measuredangle s_1s_2s_3$ and $\measuredangle s_4s_5s_6$ are the largest angles in the triangles formed by $S$ and $S'$, and $\measuredangle s_2s_1s_3$ and $\measuredangle s_5s_4s_6$ are the second-largest angles in the triangles formed by $S$ and $S'$. If
+%   % $s_1s_2$,  $s_2, s_3$, $s_4, s_5$ and $s_5, s_6$ are all in $\operatorname{MST}(S)$ and $\operatorname{MST}(S')$ as edges,
+%   $\measuredangle s_1s_2s_3=\measuredangle s_4s_5s_6$,
+%   % and $\allowbreak\frac{\operatorname{len}(s_1s_2)}{\operatorname{len}(s_2s_3)}\allowbreak\leq\allowbreak\frac{\operatorname{len}(s_4s_5)}{\operatorname{len}(s_5s_6)}$,
+%   and $\measuredangle s_1s_3s_2 \leq \measuredangle s_4s_6s_5$,
+%    then $\operatorname{SR}(S) \allowbreak\geq\allowbreak \operatorname{SR}(S')$
+% \end{lemma}
+% \begin{proof}
+%   As per the triangle inequalities, the largest side in $S$ and $S'$ is $s_1s_3$ and $s_4s_6$, and thus $\operatorname{L_M}(S)=\operatorname{len}(s_1s_2)+\operatorname{len}(s_2s_3)$ and $\operatorname{L_M}(S')=\operatorname{len}(s_4s_5)+\operatorname{len}(s_5s_6)$.
+
+%   $\operatorname{L_S}{S}$ and $\operatorname{L_S}{S'}$ can be calculated using the formula from \cite{uteshev2021length} as 
+%   \begin{align*}
+%     \operatorname{L_S}{S} =& | x_1+y_1i + (x_2+y_2i)(\cos \frac{2\pi}{3}+\sin \frac{2\pi}{3}i) \\
+%     &+ (x_3+y_3i)(\cos \frac{4\pi}{3}+\sin \frac{4\pi}{3}i)| \\
+%     =& |x_1+y_1i + (x_2+y_2i)(-\frac{1}{2}+\frac{\sqrt{3}}{2}) \\
+%     &+ (x_3+y_3i)(-\frac{1}{2}-\frac{\sqrt{3}}{2})| \\
+%     =& |x_1+y_1i + (x_2+y_2i)(-\frac{1}{2}+\frac{\sqrt{3}}{2}) \\
+%     &+ (x_3+y_3i)(-\frac{1}{2}-\frac{\sqrt{3}}{2})| \\
+%     =& |x_1+y_1i + \frac{-x_2-\sqrt{3}y_2+\left(\sqrt{3}x_2-y_2\right)i}{2} \\
+%     &+ \frac{-x_3+\sqrt{3}y_3+\left(-\sqrt{3}x_3-y_3\right)i}{2}| \\
+%   \end{align*}
+% \end{proof}
+% Let us consider the relationship between an angle defined by three terminals and the Steiner minimum tree of said terminals. Let $S=\{A, B, C\}$ where $A$, $B$ and $C$ are terminals, and let $\operatorname{len}(\measuredangle S_1S_2S_3)=\operatorname{len}(S_1S_2)+\operatorname{len}(S_2S_3)$, where $S_1, S_2, S_3$ are unique elements of $S$ let $\operatorname{SR'}(\measuredangle S_1S_2S_3)\allowbreak=\allowbreak\frac{\operatorname{L_S}(S)}{\operatorname{len} (\measuredangle S_1S_2S_3}$ and finally let $S'=\{D, E, F\}$ where $D$, $E$ and $F$ are terminals and let $S_4, S_5, S_6$ are unique elements of $S'$.  Because of triangle similarities, $\operatorname{SR'}(\measuredangle S_1S_2S_3)=\operatorname{SR'}(\measuredangle S_4S_5S_6)$ if and only if $\measuredangle S_1S_2S_3 = \measuredangle S_4S_5S_6$ and $\allowbreak\frac{\operatorname{len}(S_1S_2)}{\operatorname{len}(S_2S_3)}\allowbreak=\allowbreak\frac{\operatorname{len}(S_4S_5)}{\operatorname{len}(S_5S_6)}$
+% %  or $\frac{\operatorname{len}(S_1S_2)}{\operatorname{len}(S_2S_3)}=\frac{\operatorname{len}(S_5S_6)}{\operatorname{len}(S_4S_5)}$.
+% assuming $\operatorname{len}(S_1S_2)\leq\operatorname{len}(S_2S_3)$ and $\operatorname{len}(S_4S_5)\allowbreak\leq\operatorname{len}(S_5S_6)$. With this is in mind, let us prove the following:
+% \begin{lemma}
+%   If $\operatorname{len}(S_1S_2)\leq\operatorname{len}(S_2S_3)$ and $\allowbreak\operatorname{len}(S_4S_5)\allowbreak\leq\allowbreak\operatorname{len}(S_5S_6)$
+%   and $\measuredangle S_1S_2S_3 = \measuredangle S_4S_5S_6$ and $\allowbreak\frac{\operatorname{len}(S_1S_2)}{\operatorname{len}(S_2S_3)}\allowbreak\leq\allowbreak\frac{\operatorname{len}(S_4S_5)}{\operatorname{len}(S_5S_6)}$, then $\operatorname{SR'}(\measuredangle S_1S_2S_3)\allowbreak\geq\allowbreak\operatorname{SR'}(\measuredangle S_4S_5S_6)$.
+% \end{lemma}
+% \begin{proof}
+%   As per the law of cosines, the two edges in $\operatorname{SMT}(S)$ connecting $S_1$ and $S_2$
+% \end{proof}
+% The length of the angle the sum of the length of the two line segments used to define the angle; let us measure the ratio between the length of the angle and the length of the Steiner minimum tree as $SR'(S)$. Because of triangle similarities, the all angles are similar to $S$ if the value of the angle and the ratio between the sides is the same as the value of the angle and the ratio between the sides of $S$.
+%  is minimal if exactly two terminals have the same coordinates and the angle is $0\pi$, where $SR'(S)=\frac{1}{2}$.
+
+% For the case of three terminals, let us measure the ratio of Steiner minimum tree and the perimeter of the triangle $P_{\bigtriangleup}$(if $a, b$ and $c$ are the sides of the triangle then $P_{\bigtriangleup}=a+b+c$, even if all 3 terminals lie on the same line) as $SR'$. The lowest $SR'$ is achieved when all three points lie on the same line, and the highest $SR'$ is achieved in the case of equilateral triangle. 
+
+
+% \subsection{Equilateral triangles}
+% As we have seen in Section \ref{sec:mla}, equilateral triangles play a huge role in finding low Steiner ratio instances. This subsection will explore other explanations as to why equilateral triangles yield so low 
+
+
+% TODO: the need for global properties
 
 \section{Conclusions}
 
@@ -540,15 +618,57 @@ If we plug the values of $P_1$ and $P_2$ into $\operatorname{SMT_{rhombus}}(x)$ 
 %   \end{center}
 % \end{figure*}
 \begin{proof}[Derivation for Equation \ref{eq:4}]
-  Let us use the formula from \cite{uteshev2021length}; to do so let $T_n$ be not a set of terminals on a Euclidean plane but a set of complex numbers (with the same values and everything defined analogously). Let the "base" vector be $\overrightarrow{p_0s_0}$. Then, we need to calculate each orientation of $\overrightarrow{p_js_k}$; because we assumed Conjecture \ref{c:1} holds, we have four cases:
+  Let us use the formula from \cite{uteshev2021length}; to do so let $T_n$ be a set of $2k, k\in\mathbb{Z^+}$ terminals on a Euclidean plane but a set of complex numbers (with the same values and everything defined analogously). Let the "base" vector be $\overrightarrow{p_0s_0}$. Then, we need to calculate each orientation of $\overrightarrow{p_js_k}$; because we assumed Conjecture \ref{c:1} holds, we have four cases:
   \begin{enumerate}
     \item The base orientation, $s_0=(0+0i)$;
-    \item $s_{2k-1}$, we have to multiply by $(\cos{\pi}+\sin{\pi}i)$;
-    \item $s_{2l-2}$, we have to multiply by $(\cos{\frac{2\pi}{3}}+\sin{\frac{2\pi}{3}}i)$;
-    \item ${2l-1}$, we have to multiply by $(\cos{\frac{5\pi}{3}}+\sin{\frac{5\pi}{3}}i)$.
+    \item $s_{2k-1}=k-\frac{1}{2}+\frac{\sqrt{3}}{2}i$, we have to multiply by $(\cos{\pi}+\sin({\pi})i)\allowbreak=(-1-1i)$;
+    \item $s_{2l-1}=l-\frac{1}{2}+\frac{\sqrt{3}}{2}i$, $l\in\mathbb{Z}, 1\leq l\leq k-1$ we have to multiply by $(\cos{\frac{2\pi}{3}}+\sin{\frac{2\pi}{3}}i)$;
+    \item $s_{2l}=l+0i$, $l\in\mathbb{Z}, 1\leq l\leq k-1$ we have to multiply by $(\cos{\frac{5\pi}{3}}+\sin{\frac{5\pi}{3}}i)$.
   \end{enumerate}
-  Furthermore, because we have an even number of terminals, cases 3 and 4 come in pairs
+  Furthermore, because we have an even number of terminals, cases 3 and 4 come in pairs; thus 
+  \begin{align*}
+    (l-\frac{1}{2}+\frac{\sqrt{3}}{2}i)(\cos{\frac{2\pi}{3}}+\sin{\frac{2\pi}{3}}i)\\
+    +(l+0i)(\cos{\frac{5\pi}{3}}+\sin{\frac{5\pi}{3}}i)\\
+    &=-\frac{1}{2}-\frac{\sqrt{3}}{2}i
+  \end{align*}
+  We have $k-1$ pairs of such terminals; thus, the formula for $\operatorname{L_S}$ is:
+  \begin{align*}
+    \operatorname{L_S} &=& \left| (k-\frac{1}{2}+\frac{\sqrt{3}}{2}i)(-1-1i)+ (-\frac{1}{2}-\frac{\sqrt{3}}{2}i)(k-1)\right| \\ 
+    &=& \left| -k+\frac{1}{2}-\frac{\sqrt{3}}{2}i-\frac{1}{2}k-\frac{\sqrt{3}}{2}ki+\frac{1}{2}+\frac{\sqrt{3}}{2}i\right| \\
+    &=& \left|-\frac{3}{2}k+1-\frac{\sqrt{3}}{2}ki\right| \\
+    &=& \sqrt{(-\frac{3}{2} k +1)^2 + (-\frac{\sqrt{3}}{2} k)^2} \\
+    &=& \sqrt{3k^2 -3k + 1}
+  \end{align*}
 \end{proof}
 % \frac{k \bmod 2\sqrt{3}}{2}
 
 \end{document}
+
+
+
+% \operatorname{L_S}(T_{2k}) = \left|{\frac{3}{2} k + \frac{\sqrt{3}}{2} i k - 1}\right|
+
+
+% TODO: remark maybe?
+% \begin{proof}
+%   Let us prove this by contradiction; for $2k=4$, we already proved that this is the Steiner minimum tree topology, so we will only be considering the cases $k\geq 3$.
+
+%   Firstly, let us suppose that $\operatorname{SMT}(T_{2k})$ has a cherry that contains any terminals not included in $\{s_0, s_1, s_{2k-2}, s_{2k-1}\}$; let us denote the two terminal of the cherry $s_m$ and $s_u$. $\operatorname{len}(s_m, s_u) = 1$, because otherwise the lunes would overlap with one of the terminals. TODO: expand this
+% \end{proof}
+
+% \begin{lemma}[]
+%   % For $T_{2k}$, $k\in\mathbb{Z}, k\geq 2$ let the $C_{2k}$ be the Steiner tree topology, where  $s_0$ and $s_1$, and $s_{2k-2}$ and $s_{2k-1}$, respectively, are on cherries and all other terminals 
+%   For $T_{2k}$, $k\in\mathbb{Z}, k\geq 2$, let $p_l$ be the Steiner point incident to terminal $s_l$, then 
+%   \begin{itemize}
+%     \item $\measuredangle(\overrightarrow{p_0s_0}, \overrightarrow{p_{2k-1}s_{2k-1}})=\pi$;
+%     \item $\measuredangle(\overrightarrow{p_0s_0}, \overrightarrow{p_{2l-1}s_{2l-1}})=\frac{2\pi}{3}, l\in\mathbb{Z}, 0\leq l\leq k-1$;
+%     \item $\measuredangle(\overrightarrow{p_0s_0}, \overrightarrow{p_{2l}s_{2l}})=\frac{5\pi}{3}, l\in\mathbb{Z}, 1\leq l\leq k$.
+%   \end{itemize}
+% \end{lemma}
+% TODO: visual explanation?
+% \begin{proof}
+%   Let us prove using total induction.
+%   % vertical cherries are easy to handle
+%   % horizontal cherries 
+% \end{proof}
+% The Steiner minimal trees depicted in Figures \ref{fig:12}, \ref{fig:14} and \ref{fig:15} all satisfy these conditions 
