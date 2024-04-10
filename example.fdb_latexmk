@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex example"] 1712665240.58232 "example.aux" "example.bbl" "example" 1712665244.29109 0
+["bibtex example"] 1712759313.79998 "example.aux" "example.bbl" "example" 1712759317.74856 0
   "./example.bib" 1711762519 9643 0b81a2f5c6c6609c9a1cee347ef9c8a2 ""
   "C:/Program Files/MiKTeX/bibtex/bst/bibtex/abbrv.bst" 1291868336 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "example.aux" 1712665243 12221 4cc59d7767f15d2dfb18c9bc79a0d6fc "pdflatex"
+  "example.aux" 1712759316 13511 00ad6422a263e3ffd5b6e89d8d1efa61 "pdflatex"
   (generated)
   "example.bbl"
   "example.blg"
   (rewritten before read)
-["pdflatex"] 1712665240.9066 "f:/l5proj/diss/example.tex" "example.pdf" "example" 1712665244.29259 0
+["pdflatex"] 1712759314.29376 "f:/l5proj/diss/example.tex" "example.pdf" "example" 1712759317.74996 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458477487 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1136775854 4484 b828043cbd581d289d955903c1339981 ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/helvetic/phvb8t.tfm" 1136775854 6628 34c39492c0adc454c1c199922bba8363 ""
@@ -22,7 +22,6 @@
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/times/ptmri8r.tfm" 1136775854 4640 532ca3305aad10cc01d769f3f91f1029 ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/times/ptmri8t.tfm" 1136775854 6944 94c55ad86e6ea2826f78ba2240d50df9 ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecrm0900.tfm" 993062120 3156 6d4f5755d77638125f6f89de4f3bb757 ""
-  "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm0900.tfm" 993062508 1444 b1efc6b76338296f8076c1701e4660f3 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1234368820 996 a18840b13b499c08ac2de96a99eda4bc ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233955454 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -106,7 +105,6 @@
   "C:/Program Files/MiKTeX/tex/latex/tools/array.sty" 1654690828 12694 4770336659ba563be5de2e0739d61ddc ""
   "C:/Program Files/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/xdddd/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1712168608 361689 b6e95f16f8826f28bc2ab4462927e508 ""
-  "C:/Users/xdddd/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0900.pk" 1710940664 10472 cb2972635d6c1876dbbe9a161cc771b4 ""
   "C:/Users/xdddd/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1667336960 10778195 ce1e76fe91a6cf9cf1bab61a137642fe ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aeb10.tfm" 1057861800 6132 78e5594f4fe2bad148a7cb22806d1f42 ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/fonts/tfm/public/ae/aer5.tfm" 1057861800 6060 e6698dd00b0c710db67c8f65752c199a ""
@@ -141,11 +139,11 @@
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1575574882 9715 b051d5b493d9fe5f4bc251462d039e5f ""
   "C:/Users/xdddd/AppData/Roaming/MiKTeX/tex/latex/sttools/flushend.sty" 1634199215 28406 d50b1f1e09a8ea19dbf64f26f6df71ab ""
   "CompSci_colour.pdf" 1690212608 28075 c76557abb17c39d627f34723eeeb3731 ""
-  "example.aux" 1712665243 12221 4cc59d7767f15d2dfb18c9bc79a0d6fc "pdflatex"
-  "example.bbl" 1712665240 3299 14baa65b11292edd29be9f8763c6ba18 "bibtex example"
-  "example.out" 1712665243 4090 b90d4231a06c0ef3f56a7219f6c70fe3 "pdflatex"
-  "example.tex" 1712665234 66385 20ed46fd1e1bd76c6c51c9e7aedc5056 ""
-  "f:/l5proj/diss/example.tex" 1712665234 66385 20ed46fd1e1bd76c6c51c9e7aedc5056 ""
+  "example.aux" 1712759316 13511 00ad6422a263e3ffd5b6e89d8d1efa61 "pdflatex"
+  "example.bbl" 1712759314 3299 14baa65b11292edd29be9f8763c6ba18 "bibtex example"
+  "example.out" 1712759316 5444 f2d4033861fc4b6d9a195880330b9862 "pdflatex"
+  "example.tex" 1712759308 68979 e6e6bab62278a73cede61e3cc286d350 ""
+  "f:/l5proj/diss/example.tex" 1712759308 68979 e6e6bab62278a73cede61e3cc286d350 ""
   "mpaper.cls" 1711132916 50586 6919a749f04a448354c7164463a01094 ""
   "plot1.png" 1710883432 47391 278e79845466c00be5250de261cf1383 ""
   "plot10.png" 1711642081 18465 d26a662f8bc676dcaac04ab9d8c3257d ""

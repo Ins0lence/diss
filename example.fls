@@ -712,15 +712,9 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsl9.tfm
 INPUT C:\Users\xdddd\AppData\Roaming\MiKTeX\fonts\vf\public\ae\aer9.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmu10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm0900.tfm
-INPUT C:\Users\xdddd\AppData\Roaming\MiKTeX\fonts\tfm\public\ae\aeb10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT C:\Users\xdddd\AppData\Roaming\MiKTeX\fonts\vf\public\ae\aeb10.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmb10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\xdddd\AppData\Roaming\MiKTeX\fonts\tfm\public\ae\aeb10.tfm
 INPUT .\plot2.png
 INPUT .\plot2.png
 INPUT plot2.png
@@ -763,6 +757,11 @@ INPUT .\plot6.png
 INPUT .\plot6.png
 INPUT .\plot6.png
 INPUT .\plot6.png
+INPUT C:\Users\xdddd\AppData\Roaming\MiKTeX\fonts\vf\public\ae\aeb10.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmb10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT .\plot7.png
 INPUT .\plot7.png
 INPUT plot7.png
@@ -845,8 +844,6 @@ INPUT .\plot14.png
 INPUT example.aux
 INPUT .\example.out
 INPUT .\example.out
-INPUT C:\Users\xdddd\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk
-INPUT C:\Users\xdddd\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk
 INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\base\8r.enc
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmb10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmb10.pfb
